@@ -13,7 +13,7 @@ Validated locally on November 3, 2026. The initial checks were repeated after th
 - Unknown nested URLs return a real 404 response in the preview server. The 404 document uses deployment-base-aware links and assets.
 - Homepage screenshots were inspected in English and Traditional Chinese at desktop and phone sizes. Temporary screenshots and audit output are in ignored `artifacts/` in the working checkout.
 
-These are local implementation checks, not a certification or a measurement of a live hosting environment. Verify the GitHub Actions deployment, custom-domain DNS/HTTPS, published metadata, real contact address, and final photography when launching. Deployment has been prepared but cannot be claimed as verified until a real GitHub Pages or Cloudflare deployment succeeds.
+The automated local checks complement human review; they do not certify accessibility or assess translation nuance. Production deployment and HTTPS were verified separately as recorded below. The founder photograph remains an explicitly labeled placeholder.
 
 ## Branding and domain update
 
@@ -23,3 +23,18 @@ These are local implementation checks, not a certification or a measurement of a
 - Production canonical URL configured as https://rohlfinglabs.com/.
 - Repeated browser checks: 50 page/viewport combinations, no overflow or JavaScript errors, and no detected accessibility violations at the audited desktop and phone sizes.
 - Cloudflare DNS and GitHub Pages custom-domain configuration were read back after setup.
+
+## Verified production deployment
+
+Verified November 3, 2026:
+
+- Source commit: `ae59d7f568112820059e3be4e2991f1ca952ee6e`.
+- [GitHub Actions build and deployment](https://github.com/Austin6s/rohlfinglabs/actions/runs/41583077573) completed successfully.
+- Production site: **https://rohlfinglabs.com/**.
+- GitHub's certificate is approved for both `rohlfinglabs.com` and `www.rohlfinglabs.com`; HTTPS enforcement is enabled.
+- All 10 localized production pages returned HTTP 200 over verified HTTPS. Their canonical URLs, capitalized wordmarks, language attributes, and public contact links matched the intended configuration.
+- CSS, JavaScript, local font, favicon, social image, sitemap, and robots all returned HTTP 200.
+- An unknown nested URL returned the custom HTTP 404 page.
+- HTTP redirects to HTTPS, and `www` redirects to the apex hostname while preserving the requested path.
+- A live Chromium check passed for the desktop homepage and the mobile Chinese contact page, including the real email address, equivalent-page language switching, no horizontal overflow, and no JavaScript errors.
+- No TLS verification was disabled during the successful HTTPS checks.

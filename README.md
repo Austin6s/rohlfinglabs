@@ -6,7 +6,7 @@ A bilingual, founder-led software, data, and AI engineering website. English is 
 
 - Website: **https://rohlfinglabs.com/**
 - Source: **https://github.com/Austin6s/rohlfinglabs**
-- Hosting: **GitHub Pages**, published by GitHub Actions from `main`.
+- Hosting: **GitHub Pages**, published by GitHub Actions from `main`. HTTPS is enforced.
 - Registrar and authoritative DNS: **Cloudflare**.
 - Public contact: **rohlfinglabs@gmail.com**.
 - Canonical hostname: **rohlfinglabs.com**; `www` points to GitHub Pages and redirects to the canonical hostname.
