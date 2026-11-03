@@ -50,7 +50,8 @@ export async function build() {
     return `<!doctype html>
 <html lang="${c.lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#16666b">
+<meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f7faf9">
+<script src="${url.asset('assets/theme.js')}"></script>
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonical" href="${esc(canonical)}">${Object.entries(locales).map(([key,value])=>`<link rel="alternate" hreflang="${value.lang}" href="${esc(absolute(page,key))}">`).join('')}<link rel="alternate" hreflang="x-default" href="${esc(absolute(page,'en'))}">`}
 <meta property="og:type" content="website"><meta property="og:site_name" content="Rohlfing Labs"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:locale" content="${c.locale}"><meta property="og:locale:alternate" content="${locale === 'en' ? zh.locale : en.locale}">

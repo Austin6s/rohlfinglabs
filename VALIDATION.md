@@ -1,5 +1,14 @@
 # Website validation
 
+## Dark mode — November 3, 2026
+
+- Added a bilingual, keyboard-operable theme toggle with an exposed pressed state. System preference is the default; explicit selections persist across reloads, pages, and language changes. Initialization runs before the stylesheet to apply saved choices before first paint.
+- `npm test` passes for 11 HTML documents and 332 local links/assets. The new initialization script is approximately 0.7 KB; the combined navigation/theme scripts total approximately 3 KB. No dependencies or infrastructure were added.
+- Chromium: all 10 localized routes at 320, 390, 768, 1024, and 1440 pixels in both themes, totaling 100 page/viewport/theme combinations. No horizontal overflow or JavaScript errors.
+- axe-core: no detected violations in either theme across all 10 pages at 390 and 1440 pixels under WCAG 2 A/AA, WCAG 2.1 AA, and best-practice tags. Visually reviewed English desktop and Traditional Chinese phone screenshots, including diagram, wordmark, project cards, portrait, and contact CTA.
+- Verified live system-preference changes, saved manual override, reload/navigation/language persistence, keyboard switching in the mobile menu, cross-tab synchronization, and removal of a saved preference.
+- Verified system dark colors with JavaScript disabled, working controls with localStorage denied, and a light print palette while screen dark mode is active. Contact, keyboard skip link, menu behavior, and the existing optional Cloudflare CSP checks pass.
+
 ## Supplied identity, founder photograph, and portfolio-first positioning — November 3, 2026
 
 - Integrated Austin's supplied turquoise logotype and symbol, including matching favicon and social artwork. Updated the light theme to turquoise, charcoal, and pale teal throughout the interface and engineering diagram.

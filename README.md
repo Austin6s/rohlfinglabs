@@ -56,7 +56,7 @@ Reference: [GitHub Pages custom workflows](https://docs.github.com/en/pages/gett
 
 La Varieta was inspected first and was left unchanged. It uses static HTML, CSS/JavaScript, `.nojekyll`, a custom domain, and GitHub Pages. This site preserves that hosting model and uses a small Node script to generate ten HTML documents from shared components and separate language dictionaries.
 
-Visitors receive plain HTML, CSS, one locally hosted font, and about 1.1 KB of menu JavaScript. There is no server runtime, hydration framework, database, CMS, analytics, or external font request. Astro would be reasonable for a growing editorial site; five fixed pages in two languages do not require a framework toolchain.
+Visitors receive plain HTML, CSS, one locally hosted font, and about 3 KB of JavaScript for theme preferences and navigation. There is no server runtime, hydration framework, database, CMS, analytics, or external font request. Astro would be reasonable for a growing editorial site; five fixed pages in two languages do not require a framework toolchain.
 
 ```text
 site.config.mjs          Public domain, email, and headshot configuration
@@ -90,6 +90,8 @@ Use **Rohlfing Labs**, with both words capitalized and a space, in written copy.
 Re-export the social PNG after editing its SVG. The service icons and engineering diagram are original graphics. Portfolio thumbnails are actual screenshots of public project pages, captured with the owner's permission. Their sources and capture details are recorded in `public/assets/projects/README.md`. No private dashboards or generated headshots are used.
 
 The typography combines self-hosted Manrope, an italic system serif, and platform-appropriate Traditional Chinese fonts. Body text, navigation, controls, headings, and captions have dedicated responsive sizes; phone body copy is generally 16–18 pixels. Manrope is distributed under the SIL Open Font License in `public/assets/Manrope-OFL.txt`; source: [Google Fonts' Manrope family](https://github.com/google/fonts/tree/main/ofl/manrope). Chinese uses system fonts to avoid a large CJK download.
+
+The dark theme uses charcoal surfaces, light text, and turquoise accents. The navigation's moon/sun button toggles themes; on phones it is inside the menu. The initial theme follows `prefers-color-scheme`. Explicit choices are saved in the `rohlfing-theme` localStorage key, shared across languages and synchronized between tabs. Removing that key restores system following. `theme.js` applies a saved choice before styles load; system colors remain available without JavaScript. Screen-only theme overrides preserve the light palette for printing. Semantic CSS variables cover surfaces, text, buttons, and the SVG diagram; the wordmark adapts through a CSS filter while photos and project screenshots retain their original colors.
 
 ## Content configuration
 
