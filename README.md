@@ -1,0 +1,112 @@
+# Rohlfing Labs
+
+A bilingual, founder-led software, data, and AI engineering website. English is served at `/`; Traditional Chinese at `/zh-tw/`. Each language has Home, Expertise, Work, About, and Contact pages.
+
+## Production configuration
+
+- Website: **https://rohlfinglabs.com/**
+- Source: **https://github.com/Austin6s/rohlfinglabs**
+- Hosting: **GitHub Pages**, published by GitHub Actions from `main`.
+- Registrar and authoritative DNS: **Cloudflare**.
+- Public contact: **rohlfinglabs@gmail.com**.
+- Canonical hostname: **rohlfinglabs.com**; `www` points to GitHub Pages and redirects to the canonical hostname.
+
+GitHub's repository variables `SITE_URL` and `CONTACT_EMAIL` are configured for the URL and address above. These values are also the defaults in `site.config.mjs`, so local and production builds agree. No API tokens or secrets are included in the website.
+
+Cloudflare DNS uses the four official GitHub Pages IPv4 addresses (`185.199.108.153` through `185.199.111.153`), four IPv6 addresses (`2606:50c0:8000::153` through `2606:50c0:8003::153`), and a `www` CNAME to `austin6s.github.io`. All are **DNS only**, with a 300-second TTL. GitHub handles the website and TLS certificate directly. There is no Cloudflare Pages project or Worker for this site.
+
+The custom domain is configured in GitHub Pages settings. `public/CNAME` also records the intended domain in the output; with an Actions publishing source, the repository's Pages setting is authoritative. Do not change the DNS records to proxied mode without reviewing certificate renewal and origin HTTPS behavior.
+
+## Run locally
+
+Use Node.js 22 or later. There are **no npm dependencies** and no install step.
+
+```bash
+npm run dev
+```
+
+Open **http://127.0.0.1:4321/**. Source and asset changes rebuild automatically; refresh the browser to see them. Restart the server after changing `site.config.mjs` or the build script. Set `PORT` to use another port.
+
+```bash
+npm test         # Build and validate the generated artifact
+npm run build   # Generate dist/
+npm run preview # Build, then serve without watching
+```
+
+`SITE_URL` is the public deployment URL, not the local preview URL. It controls canonicals, sitemap links, social image URLs, and the 404 page's asset paths. Ordinary navigation and assets use relative paths. For a different host or project subdirectory:
+
+```bash
+SITE_URL=https://example.com/project/ npm test
+```
+
+## Publish an update
+
+1. Make changes, run `npm test`, and review both languages in a browser.
+2. Commit and push `main` to the existing repository.
+3. Watch **Build and deploy GitHub Pages** in the Actions tab. It builds, checks, and uploads `dist/`, then deploys the artifact to Pages. Pull requests build and validate without publishing.
+4. Verify the production homepage, a Chinese interior page, the contact link, and an unknown URL. A failed workflow does not replace the last successful deployment.
+
+The repository's publishing source is **GitHub Actions**, not branch-based publishing. `dist/` is generated and ignored by Git. The workflow uses the built-in `GITHUB_TOKEN`; no personal access token is needed in repository secrets.
+
+To recreate the setup in another repository, enable Pages with a workflow publishing source, configure the custom domain in Pages settings, create the DNS records, and set `SITE_URL` and `CONTACT_EMAIL` under **Settings → Secrets and variables → Actions → Variables**. Enforce HTTPS after GitHub's certificate has been issued.
+
+Reference: [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [custom domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+## Architecture
+
+La Varieta was inspected first and was left unchanged. It uses static HTML, CSS/JavaScript, `.nojekyll`, a custom domain, and GitHub Pages. This site preserves that hosting model and uses a small Node script to generate ten HTML documents from shared components and separate language dictionaries.
+
+Visitors receive plain HTML, CSS, one locally hosted font, and about 1.1 KB of menu JavaScript. There is no server runtime, hydration framework, database, CMS, analytics, or external font request. Astro would be reasonable for a growing editorial site; five fixed pages in two languages do not require a framework toolchain.
+
+```text
+site.config.mjs          Public domain, email, and headshot configuration
+src/content/en.mjs      English content
+src/content/zh-tw.mjs    Traditional Chinese content
+src/lib/components.mjs  Navigation, footer, illustrations, and shared components
+src/lib/views.mjs       Page layouts
+public/assets/          CSS, menu JS, local font, logo assets, and social images
+public/CNAME            Intended custom domain
+public/_headers         Optional security headers if hosted on Cloudflare Pages
+scripts/build.mjs       HTML, JSON-LD, sitemap, robots, and 404 generation
+scripts/check.mjs       Generated-site checks
+scripts/preview.mjs     Local server and rebuild watcher
+.github/workflows/      Build, validation, and GitHub Pages deployment
+dist/                  Generated hosting artifact, intentionally ignored
+```
+
+Edit the language dictionaries for copy changes. Add new page templates to `views.mjs`, register routes in `scripts/build.mjs`, and supply metadata in both dictionaries. To add a language, add its dictionary to `locales` and add a language-switch link; SEO and sitemap generation iterate the locale registry.
+
+## Brand and assets
+
+Use **Rohlfing Labs**, with both words capitalized and a space, for the company name. The wordmark pairs a geometric RL badge with a capitalized typographic name. The standalone vector assets are:
+
+- `public/assets/rohlfing-labs-logo.svg` — transparent horizontal logo.
+- `public/assets/rohlfing-labs-mark.svg` — square monogram.
+- `public/assets/favicon.svg` — matching browser icon.
+- `public/assets/social-card.svg` — editable social artwork.
+- `public/assets/social-card.png` — 1200 × 630 raster export for social platforms.
+
+Re-export the social PNG after editing its SVG. Service and project illustrations are original graphics. Project illustrations are visibly identified as illustrations, not screenshots. No stock photography, La Varieta assets, or generated headshots are used.
+
+The typography combines self-hosted Manrope, an italic system serif, and platform-appropriate Traditional Chinese fonts. Body text, navigation, controls, headings, and captions have dedicated responsive sizes; phone body copy is generally 16–18 pixels. Manrope is distributed under the SIL Open Font License in `public/assets/Manrope-OFL.txt`; source: [Google Fonts' Manrope family](https://github.com/google/fonts/tree/main/ofl/manrope). Chinese uses system fonts to avoid a large CJK download.
+
+## Content configuration
+
+- **Email:** `site.config.mjs` defaults to the provided `rohlfinglabs@gmail.com`. `CONTACT_EMAIL` can override it. The address opens a localized prompt in the visitor's own mail application. No email is sent from this website. If `email` is deliberately set to `null`, the contact page shows an explicit placeholder.
+- **Founder photograph:** Add an optimized image such as `public/assets/austin-rohlfing.webp` and set `headshot: 'assets/austin-rohlfing.webp'`. The current AR monogram remains labeled as a photo placeholder. Aim for under 200 KB.
+- **Project permissions:** La Varieta links to its public website and uses an original illustration. The Archdiocese entry explicitly describes a prototype, without implying a paid engagement, endorsement, production deployment, or outcome. No Archdiocese materials are published. Add screenshots only with permission.
+- **Business details:** No phone number, registered company status, client counts, certifications, prices, or results have been invented. Add verified details when appropriate.
+
+## Optional hosting portability
+
+The same `dist/` works on Cloudflare Pages: framework preset **None**, Node 22, build command `npm run build && npm run check`, output `dist`, production branch `main`. Set `SITE_URL` and `CONTACT_EMAIL` for that environment. `public/_headers` contains Cloudflare-compatible security headers; GitHub Pages does not apply that file.
+
+Do not enable another public production host while GitHub Pages is serving the domain. If migrating, configure the replacement, move the custom domain, disable the old deployment, and verify canonicals and redirects.
+
+Reference: [Cloudflare Pages static HTML deployment](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
+
+## Validation
+
+`npm test` validates all generated HTML documents: unique titles and H1s, localized metadata, canonicals, language alternates, JSON-LD, sitemap entries, internal links and anchors, image alt attributes and dimensions, and asset budgets. See `VALIDATION.md` for browser validation.
+
+Review the live site after deployment. Automated checks complement human review and do not certify accessibility or assess translation nuance.

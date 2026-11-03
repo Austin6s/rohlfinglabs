@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f8f8f3"/>
+<g transform="translate(70 62) scale(1.2)"><rect x="1" y="1" width="46" height="46" rx="9" fill="#294d36"/><g stroke="#f8f8f3" stroke-width="2.4" stroke-linejoin="round"><path d="M10.5 35V13h8a6.5 6.5 0 0 1 0 13h-8m8 0L26 35"/><path d="M31 13v22h9"/></g><rect x="36" y="12" width="4" height="4" fill="#d6ec9f"/></g>
+<text x="149" y="107" font-family="Arial,sans-serif" font-size="40" font-weight="600" letter-spacing="-1.5" fill="#242b26">Rohlfing<tspan font-weight="400"> Labs</tspan></text>
+<text x="70" y="246" font-family="Arial,sans-serif" font-size="69" letter-spacing="-3" fill="#242b26">Complex problems.</text>
+<text x="70" y="333" font-family="Georgia,serif" font-style="italic" font-size="77" letter-spacing="-3" fill="#294d36">Thoughtful technology.</text>
+<text x="74" y="416" font-family="Arial,sans-serif" font-size="26" fill="#646b63">Software, Data &amp; AI Engineering</text>
+<text x="941" y="556" font-family="Arial,sans-serif" font-size="18" fill="#294d36">rohlfinglabs.com</text>
+<path d="M74 514h1052" stroke="#d9ddd2"/>
+<text x="74" y="556" font-family="Arial,sans-serif" font-size="20" fill="#646b63">Based in Taiwan. Built for a connected world.</text>
+<g transform="translate(940 154)" fill="none" stroke="#a1b18c" stroke-width="1.3"><path d="M-12 36h40q18 0 18 18v68q0 18 18 18h33M-36 140H97M-12 244h40q18 0 18-18v-68q0-18 18-18h33"/><path d="m133 105 35 35-35 35-35-35z" fill="#294d36" stroke="none"/><path d="M118 140h30m-15-15v30" stroke="#d6ec9f"/><path d="M168 140h25q15 0 15-15V40m-40 100h58m-58 0h25q15 0 15 15v85"/><circle cx="208" cy="40" r="6" fill="#d6ec9f"/><circle cx="226" cy="140" r="6" fill="#d6ec9f"/><circle cx="208" cy="240" r="6" fill="#d6ec9f"/></g>
+</svg>
