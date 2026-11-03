@@ -78,11 +78,12 @@ Edit the language dictionaries for copy changes. Add new page templates to `view
 
 ## Brand and assets
 
-Use **Rohlfing Labs**, with both words capitalized and a space, for the company name. The wordmark pairs a geometric RL badge with a capitalized typographic name. The standalone vector assets are:
+Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The supplied turquoise artwork is used unchanged as the visual wordmark. The light theme pairs turquoise and dark charcoal with pale teal surfaces; darker teal is used for readable text and controls. Brand exports are:
 
-- `public/assets/rohlfing-labs-logo.svg` — transparent horizontal logo.
-- `public/assets/rohlfing-labs-mark.svg` — square monogram.
-- `public/assets/favicon.svg` — matching browser icon.
+- `public/assets/rohlfing-labs-logo.png` — transparent horizontal logotype, trimmed and resized from `media/logotype_turquoise.png`.
+- `public/assets/rohlfing-labs-mark.png` — supplied symbol, trimmed and resized from `media/logo_turquoise.png`.
+- Matching `.svg` exports wrap these raster images; they are not newly traced vector artwork.
+- `public/assets/favicon.svg` and `favicon.png` — matching browser icon.
 - `public/assets/social-card.svg` — editable social artwork.
 - `public/assets/social-card.png` — 1200 × 630 raster export for social platforms.
 
@@ -93,9 +94,12 @@ The typography combines self-hosted Manrope, an italic system serif, and platfor
 ## Content configuration
 
 - **Email:** `site.config.mjs` defaults to the provided `rohlfinglabs@gmail.com`. `CONTACT_EMAIL` can override it. The address opens a localized prompt in the visitor's own mail application. No email is sent from this website. If `email` is deliberately set to `null`, the contact page shows an explicit placeholder.
-- **Founder photograph:** Add an optimized image such as `public/assets/austin-rohlfing.webp` and set `headshot: 'assets/austin-rohlfing.webp'`. The current AR monogram remains labeled as a photo placeholder. Aim for under 200 KB.
+- **Founder photograph:** `public/assets/austin-rohlfing.webp` is the optimized, metadata-free export of Austin's supplied `media/1773904363755.jpg`, configured in `site.config.mjs`. The original composition is preserved; the export is approximately 61 KB.
+- **Professional background:** `src/content/background.mjs` lists the six former employers Austin supplied, with English and Traditional Chinese context. These appear on Home and About as personal work history. Four verified logos are stored locally; TernBooking and Rumble Roundnet use text. Sources are recorded in `public/assets/organizations/README.md`. No titles, dates, endorsements, or company-specific responsibilities are inferred.
 - **Projects:** `src/content/projects.mjs` holds shared URLs, screenshot dimensions, technologies, and both language versions of each case study. Set `featured: true` to include a project on the homepage. The owner authorized these workspace projects for portfolio use. The Taipei Archdiocese entry remains a public prototype; its public URL does not establish an official deployment, endorsement, or paid engagement.
 - **Business details:** No phone number, registered company status, client counts, certifications, prices, or results have been invented. Add verified details when appropriate.
+
+CakeonStick is not currently included: its local repository has no project files and no verified public project materials were supplied. La Varieta and the Taipei prototype retain their existing, separately labeled project entries.
 
 ## Optional hosting portability
 

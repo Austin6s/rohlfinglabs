@@ -1,5 +1,15 @@
 # Website validation
 
+## Supplied identity, founder photograph, and professional background — November 3, 2026
+
+- Integrated Austin's supplied turquoise logotype and symbol, including matching favicon and social artwork. Updated the light theme to turquoise, charcoal, and pale teal throughout the interface and engineering diagram.
+- Added the supplied headshot to both localized Home and About pages. WebP export preserves the original composition, removes source metadata, and is approximately 61 KB. The photo placeholder is no longer displayed.
+- Added six former employers as Austin's personal professional background, separate from project work. Four official-source logos are locally hosted with provenance recorded in `public/assets/organizations/README.md`; TernBooking and Rumble Roundnet use text. No job titles, dates, endorsements, or employer-specific contributions were invented.
+- `npm test` passes for 11 documents and 337 local links/assets, including bilingual metadata, structured data, canonicals, sitemap, image attributes, and asset budgets. No dependencies or deployment infrastructure changed.
+- Chromium checks pass for all 10 routes at 320, 390, 768, 1024, and 1440 pixels. All images decode successfully, with no horizontal overflow or JavaScript page errors. axe-core detected no violations at 390 and 1440 pixels under the existing WCAG/best-practice rule set.
+- Verified mobile menu, keyboard skip link, equivalent-page language switching, no-JavaScript navigation, contact links, and the optional Cloudflare CSP. Visually reviewed the supplied assets, social card, homepage, and employer-logo section on desktop and phone.
+- CakeonStick remains excluded because its local repository is empty and no public project materials are available. The Taipei Archdiocese entry retains its prototype status. These notes supersede the earlier founder-photograph placeholder notes below.
+
 ## Positioning and portfolio refinement — November 3, 2026
 
 - Production build and `npm test` pass: 11 HTML documents, 295 local links/assets, localized metadata, structured data, sitemap, image dimensions/alt text, and asset budgets.

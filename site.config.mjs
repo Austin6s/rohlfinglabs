@@ -6,5 +6,5 @@ export default {
   // Public business contact. Use CONTACT_EMAIL to override it at build time.
   // Set email to null to deliberately show the pre-launch placeholder instead.
   email: process.env.CONTACT_EMAIL || 'rohlfinglabs@gmail.com',
-  headshot: null, // e.g. 'assets/austin-rohlfing.webp'; put the file in public/.
+  headshot: 'assets/austin-rohlfing.webp',
 };

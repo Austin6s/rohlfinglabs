@@ -37,7 +37,7 @@ export async function build() {
       '@context': 'https://schema.org', '@graph': [
         { '@type': 'Organization', '@id': `${site.href}#organization`, name: config.name, url: site.href,
           description: c.meta.home[1], slogan: 'Complex problems. Thoughtful technology.',
-          logo: new URL('assets/favicon.svg', site).href,
+          logo: new URL('assets/rohlfing-labs-logo.png', site).href,
           ...(config.email ? {email: config.email} : {}),
           founder: {'@id': `${site.href}#austin`}, location: {'@type':'Place', name:'Taiwan'} },
         { '@type':'Person', '@id':`${site.href}#austin`, name:'Austin Rohlfing', jobTitle:'Founder',
@@ -50,7 +50,7 @@ export async function build() {
     return `<!doctype html>
 <html lang="${c.lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#294d36">
+<meta name="color-scheme" content="light"><meta name="theme-color" content="#16666b">
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonical" href="${esc(canonical)}">${Object.entries(locales).map(([key,value])=>`<link rel="alternate" hreflang="${value.lang}" href="${esc(absolute(page,key))}">`).join('')}<link rel="alternate" hreflang="x-default" href="${esc(absolute(page,'en'))}">`}
 <meta property="og:type" content="website"><meta property="og:site_name" content="Rohlfing Labs"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:locale" content="${c.locale}"><meta property="og:locale:alternate" content="${locale === 'en' ? zh.locale : en.locale}">

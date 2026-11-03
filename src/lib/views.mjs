@@ -1,5 +1,11 @@
 import { esc, lines, arrow, label, link, cta, portrait, systemsArt, miniIcon } from './components.mjs';
 import { localizedProjects } from '../content/projects.mjs';
+import { organizations, backgroundCopy } from '../content/background.mjs';
+
+function professionalBackground(c, url) {
+  const copy = backgroundCopy[c.lang];
+  return `<section class="professional-background container" aria-labelledby="professional-background-title"><div class="professional-background-intro"><h2 id="professional-background-title">${esc(copy.title)}</h2><p>${esc(copy.text)}</p></div><ul class="organization-list">${organizations.map(org => `<li>${org.logo ? `<div class="organization-logo"><img src="${url.asset(`assets/organizations/${org.logo}`)}" alt="" width="${org.width}" height="${org.height}" loading="lazy" decoding="async"></div><span class="organization-name">${esc(org.name)}</span>` : `<span class="organization-text">${esc(org.name)}</span>`}</li>`).join('')}</ul></section>`;
+}
 
 function projectImage(project, c, url) {
   return `<figure class="project-screenshot"><img src="${url.asset(`assets/projects/${project.image}`)}" width="${project.width}" height="${project.height}" alt="${esc(project.alt)}" loading="lazy" decoding="async"><figcaption>${esc(project.disclaimer ? c.work.prototypeScreenshot : c.work.screenshot)}<span aria-hidden="true">↗</span></figcaption></figure>`;
@@ -12,6 +18,7 @@ function selectedWork(c, url) {
 export function home(c, url, config) {
   return `<section class="hero container"><div class="hero-copy">${label(c.eyebrow)}<h1>${esc(c.hero.first)}<br><em>${esc(c.hero.second)}<br>${esc(c.hero.third)}</em></h1><p class="hero-description">${esc(c.hero.text)}</p><div class="hero-actions">${link(url('contact'), c.hero.cta, 'button button-dark', true)}${link(url('services'), c.hero.secondary, 'quiet-link')}</div><p class="location"><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.location)}</p></div><div class="hero-visual">${systemsArt(c)}</div></section>
   <div class="capability-strip"><div class="container"><span class="strip-title">SOFTWARE, DATA & AI ENGINEERING</span><div>${c.hero.bottom.map((t,i) => `<span><b>0${i+1}</b>${esc(t)}</span>`).join('')}</div><span class="strip-symbol" aria-hidden="true">↗</span></div></div>
+  ${professionalBackground(c,url)}
   <section class="section container" id="expertise"><div class="section-intro"><div>${label(c.intro.label)}<h2>${lines(c.intro.title)}</h2></div><div><p class="body-large">${esc(c.intro.text)}</p>${link(url('services'), c.intro.link)}</div></div><div class="service-grid">${c.services.map(s => `<a class="service-card" href="${url('services')}#${s.id}"><div class="service-card-top">${miniIcon(s.id)}<span class="index">${s.n} /</span></div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p><div class="service-card-bottom"><span>${esc(s.tags[0])}</span>${arrow(true)}</div></a>`).join('')}</div></section>
   ${selectedWork(c,url)}
   ${approach(c)}
@@ -37,7 +44,7 @@ export function work(c, url) {
 }
 
 export function about(c, url, config) {
-  return `${pageIntro(c.about.label,c.about.title,c.about.intro)}<section class="container about-founder"><div class="about-portrait">${portrait(c,config.headshot ? url.asset(config.headshot) : null)}<p class="portrait-caption">${esc(c.founder.caption)}</p></div><div class="about-bio"><h2>${esc(c.about.heading)}</h2>${c.about.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></section><section class="background-section"><div class="container background-grid"><div>${label(c.lang==='en'?'THE ENGINEERING BACKGROUND':'專業背景')}<h2>${esc(c.about.background)}</h2><p class="muted">${esc(c.about.experienceNote)}</p></div><ul class="skill-list">${c.about.skills.map(s=>`<li>${esc(s)}<span aria-hidden="true">↗</span></li>`).join('')}</ul></div></section><section class="container section values-section">${label(c.lang==='en'?'WHAT GUIDES THE WORK':'我們重視的事')}<div class="values-grid">${c.about.values.map(([h,p],i)=>`<div><span class="index">0${i+1}</span><h2>${esc(h)}</h2><p>${esc(p)}</p></div>`).join('')}</div></section>${cta(c,url)}`;
+  return `${pageIntro(c.about.label,c.about.title,c.about.intro)}<section class="container about-founder"><div class="about-portrait">${portrait(c,config.headshot ? url.asset(config.headshot) : null)}<p class="portrait-caption">${esc(c.founder.caption)}</p></div><div class="about-bio"><h2>${esc(c.about.heading)}</h2>${c.about.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></section>${professionalBackground(c,url)}<section class="background-section"><div class="container background-grid"><div>${label(c.lang==='en'?'THE ENGINEERING BACKGROUND':'專業背景')}<h2>${esc(c.about.background)}</h2><p class="muted">${esc(c.about.experienceNote)}</p></div><ul class="skill-list">${c.about.skills.map(s=>`<li>${esc(s)}<span aria-hidden="true">↗</span></li>`).join('')}</ul></div></section><section class="container section values-section">${label(c.lang==='en'?'WHAT GUIDES THE WORK':'我們重視的事')}<div class="values-grid">${c.about.values.map(([h,p],i)=>`<div><span class="index">0${i+1}</span><h2>${esc(h)}</h2><p>${esc(p)}</p></div>`).join('')}</div></section>${cta(c,url)}`;
 }
 
 export function contact(c, url, config) {
