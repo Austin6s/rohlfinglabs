@@ -12,6 +12,7 @@
 - Cloudflare MCP confirms the existing DNS-only GitHub Pages A/AAAA records and `www` CNAME. GitHub confirms the Actions publishing source, `rohlfinglabs.com` custom domain, and HTTPS enforcement. Deployment configuration is unchanged.
 - No application dependencies or backend services were added. Portfolio captures total approximately 500 KB and load lazily with reserved dimensions.
 - Remaining asset: Austin's photograph. Its existing monogram is explicitly labeled as a placeholder. A future BudgetAnywhere dashboard capture should use shareable demonstration data; the current image is its real public welcome screen.
+- Published commit `273ddc7` through [GitHub Actions run 41590623840](https://github.com/Austin6s/rohlfinglabs/actions/runs/41590623840), with successful build and deployment. Live HTTPS checks passed for all 10 localized routes, 11 assets including all four project captures, the real 404 response, and the `www` 301 redirect preserving the path. The production browser also verified all three featured projects, four Chinese case studies, image decoding, localized prototype status, and bilingual contact navigation.
 
 ## Initial implementation validation
 
