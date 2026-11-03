@@ -1,5 +1,12 @@
 # Website validation
 
+## Fortune 100 founder credential — November 3, 2026
+
+- Verified Nationwide's No. 69 position on the 2026 Fortune 500 using Fortune's ranking and [Nationwide's official June 3, 2026 announcement](https://news.nationwide.com/from-mutual-roots-to-a-modern-leader-nationwide-rises-to-no-69-on-fortune-500-list/). The publication is Fortune, not Forbes. The explicit year describes the company ranking, rather than Austin's employment dates.
+- Added a prominent homepage credential linking to the About page. About names Nationwide Mutual Insurance, states Austin's résumé-supported Senior Software Engineer (Lead ETL Developer) role, and provides a source link for the company ranking. Both English and Traditional Chinese reflect the same meaning.
+- `npm test` passes for 11 HTML documents and 334 local links/assets, including the new About anchor. No dependencies or infrastructure changed.
+- Checked Home and About in both languages, light/dark modes, and 1440/390/320-pixel widths: 24 combinations, with no horizontal overflow, JavaScript errors, or detected axe-core WCAG/best-practice violations. The credential link reaches its context, and the ranking note links to the verified official announcement. Visually reviewed desktop hero and Chinese phone source-note screenshots.
+
 ## Dark mode — November 3, 2026
 
 - Added a bilingual, keyboard-operable theme toggle with an exposed pressed state. System preference is the default; explicit selections persist across reloads, pages, and language changes. Initialization runs before the stylesheet to apply saved choices before first paint.

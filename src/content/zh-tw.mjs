@@ -40,7 +40,8 @@ export default {
       "軟體與網站",
       "資料與架構",
       "AI 應用"
-    ]
+    ],
+    "credibility": "創辦人曾任美國《財富》百大企業工程師。"
   },
   intro: {
     "label": "01 / 我們能打造什麼",
@@ -147,7 +148,7 @@ export default {
     "label": "04 / 工程背後的人",
     "title": "扎實的工程背景，\n直接而真誠的合作。",
     "text": "Rohlfing Labs 將企業級系統的工程經驗，帶入範圍明確的軟體、資料與 AI 專案。您將直接與創辦人 Austin Rohlfing 合作；他是旅居台灣的美國工程師。",
-    "detail": "我在 Nationwide Mutual Insurance 與 Veterinary Practice Partners 的工作涵蓋資料平台、業務系統整合與技術帶領。這些經驗讓我重視清楚的專案範圍、可靠的架構，以及便於長期維護的軟體。",
+    "detail": "我的背景涵蓋美國《財富》百大企業的工程工作，以及企業資料平台的建置。這些經驗讓我重視清楚的專案範圍、可靠的架構，以及便於長期維護的軟體。",
     "link": "認識 Austin",
     "role": "創辦人・軟體與資料工程",
     "photo": "創辦人肖像預留位置",
@@ -157,13 +158,13 @@ export default {
   },
   about: {
     "label": "關於 ROHLFING LABS",
-    "title": "企業級工程經驗，\n直接而務實的合作。",
+    "title": "美國百大企業經驗，\n直接而務實的合作。",
     "intro": "從真實業務系統累積的軟體、資料與 AI 工程經驗，讓您直接與負責設計及開發的人合作。",
     "heading": "您好，我是 Austin。",
     "paragraphs": [
       "我是 Rohlfing Labs 創辦人 Austin Rohlfing，一位旅居台灣的美國軟體與資料工程師。我將企業資料平台的實務經驗，運用在不同規模企業的網站、客製化應用程式與資料系統。",
+      "我曾在美國《財富》百大企業 Nationwide Mutual Insurance 擔任資深軟體工程師（ETL 開發負責人），帶領工程團隊交付橫跨多個系統的資料專案。工作結合 Python、SQL、Spark，也需要持續與業務及工程團隊溝通，讓需求能準確落實。",
       "在 Veterinary Practice Partners，我的工作包含共同設計 Databricks 資料平台、落實資料治理與敏感資料存取控管，以及建置事件驅動系統。這些經驗讓我在規劃架構時，始終考量實際使用資料的人與他們的工作需求。",
-      "在 Nationwide Mutual Insurance，我負責帶領 ETL 開發與工程團隊，交付橫跨多個系統的資料專案。工作結合 Python、SQL、Spark，也需要持續與業務及工程團隊溝通，讓需求能準確落實。",
       "在這些經驗之外，我也開發軟體產品、企業網站與多語系內容系統，包括多幣別預算管理工具，以及結合 AI 輔助翻譯與人工審閱的發布工具。",
       "Rohlfing Labs 以這些經驗為基礎，由我親自參與從初步討論、設計到開發的各個階段。我們先談清楚範圍，再打造能實際運作、持續維護與擴充的系統。"
     ],
@@ -190,7 +191,12 @@ export default {
         "立足台灣，結合美國背景與國際企業合作經驗，理解不同市場的需求。"
       ]
     ],
-    "experienceNote": "企業資料平台的實務經驗，是我規劃專案範圍、選擇架構與考量長期運作的基礎。"
+    "experienceNote": "企業資料平台的實務經驗，是我規劃專案範圍、選擇架構與考量長期運作的基礎。",
+    "ranking": {
+      "text": "Nationwide 於 Fortune《財富》2026 年美國 500 大企業榜排名第 69 名。",
+      "sourceLabel": "查看 2026 年排名來源",
+      "sourceUrl": "https://news.nationwide.com/from-mutual-roots-to-a-modern-leader-nationwide-rises-to-no-69-on-fortune-500-list/"
+    }
   },
   work: {
     "label": "作品與技術探索",

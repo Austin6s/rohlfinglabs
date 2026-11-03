@@ -93,3 +93,13 @@ html[lang="zh-Hant"]{--serif:'Noto Serif TC','Songti TC','PMingLiU',serif}html[l
 .theme-toggle[aria-pressed="true"] .theme-sun{display:block}
 @media(max-width:1050px){.theme-toggle{width:auto;align-self:flex-start;gap:12px;padding-inline:14px;margin-bottom:12px;font-size:16px}.theme-toggle span{position:static;width:auto;height:auto;margin:0;overflow:visible;clip-path:none;white-space:normal}}
 @media print{.theme-toggle{display:none!important}}
+
+/* A specific founder credential links directly to its company and source context. */
+.hero-credibility{display:inline-flex;align-items:center;gap:12px;max-width:440px;border-left:2px solid var(--accent);padding-left:12px;margin-top:20px;font-size:16px;font-weight:600;line-height:1.6;color:var(--accent)}
+.hero-credibility svg{width:17px;height:17px;flex-shrink:0}
+.hero-credibility:hover{text-decoration:underline;text-underline-offset:4px}
+.about-founder{scroll-margin-top:120px}
+.ranking-note{border-left:2px solid var(--accent);background:var(--soft-bg);padding:18px 22px;margin-top:28px}
+.about-bio .ranking-note p{font-size:15px;line-height:1.8;margin:0;color:var(--copy)}
+.ranking-note .text-link{font-size:14px;padding-block:8px;margin-top:8px}
+@media(max-width:700px){.hero-credibility{font-size:15px;margin-top:18px}.about-founder{scroll-margin-top:100px}.ranking-note{padding:16px 18px}.about-bio .ranking-note p{font-size:15px}}

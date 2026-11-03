@@ -40,7 +40,8 @@ export default {
       "Software & web",
       "Data & architecture",
       "Applied AI"
-    ]
+    ],
+    "credibility": "Founded by a former Fortune 100 engineer."
   },
   intro: {
     "label": "01 / WHAT WE BUILD",
@@ -147,7 +148,7 @@ export default {
     "label": "04 / THE PERSON BEHIND THE WORK",
     "title": "Engineering depth.\nA personal approach.",
     "text": "Rohlfing Labs brings enterprise engineering experience to focused software, data, and AI projects. You work directly with founder Austin Rohlfing, an American engineer based in Taiwan.",
-    "detail": "My work at Nationwide Mutual Insurance and Veterinary Practice Partners spans data platforms, business-system integration, and technical leadership. I bring that experience to clear project scopes, dependable architecture, and software built to be maintained.",
+    "detail": "My background includes engineering at a Fortune 100 company and building enterprise data platforms. I bring that experience to clear project scopes, dependable architecture, and maintainable software.",
     "link": "Meet Austin",
     "role": "Founder · Software & Data Engineering",
     "photo": "Founder portrait",
@@ -157,13 +158,13 @@ export default {
   },
   about: {
     "label": "ABOUT ROHLFING LABS",
-    "title": "Enterprise experience.\nDirect collaboration.",
+    "title": "Fortune 100 experience.\nDirect collaboration.",
     "intro": "Software, data, and AI engineering grounded in real business systems, with direct access to the person designing and building your solution.",
     "heading": "Hi, I’m Austin.",
     "paragraphs": [
       "I’m Austin Rohlfing, the founder of Rohlfing Labs. I’m an American software and data engineer based in Taiwan, bringing enterprise platform experience to websites, custom applications, and data systems for businesses of different sizes.",
+      "At Nationwide Mutual Insurance, a Fortune 100 company, I worked as a Senior Software Engineer (Lead ETL Developer). I led ETL development and an engineering team delivering data projects across multiple systems, combining Python, SQL, and Spark with close collaboration between business stakeholders and engineers.",
       "At Veterinary Practice Partners, my work has included co-designing a Databricks data platform, implementing governance and sensitive-data controls, and building event-driven systems. That experience connects architecture decisions to the everyday needs of the people using the data.",
-      "At Nationwide Mutual Insurance, I led ETL development and an engineering team delivering data projects across multiple systems. The work combined Python, SQL, and Spark with close collaboration between business stakeholders and engineers.",
       "Alongside that experience, I build software products, business websites, and multilingual content systems. My projects include a multi-currency budgeting application and publishing tools that combine AI-assisted translation with human review.",
       "Rohlfing Labs brings this experience into a founder-led business. I stay involved from the first conversation through design and implementation, with a clear scope and an emphasis on systems you can operate, maintain, and extend."
     ],
@@ -190,7 +191,12 @@ export default {
         "Based in Taiwan, with an American background and experience working with international businesses."
       ]
     ],
-    "experienceNote": "Experience with enterprise platforms informs how I scope projects, choose architecture, and plan for long-term operation."
+    "experienceNote": "Experience with enterprise platforms informs how I scope projects, choose architecture, and plan for long-term operation.",
+    "ranking": {
+      "text": "Nationwide is ranked No. 69 on the 2026 Fortune 500, published by Fortune.",
+      "sourceLabel": "2026 ranking source",
+      "sourceUrl": "https://news.nationwide.com/from-mutual-roots-to-a-modern-leader-nationwide-rises-to-no-69-on-fortune-500-list/"
+    }
   },
   work: {
     "label": "WORK & EXPLORATIONS",
