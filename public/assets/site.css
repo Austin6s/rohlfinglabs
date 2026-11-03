@@ -68,23 +68,11 @@ html[lang="zh-Hant"]{--serif:'Noto Serif TC','Songti TC','PMingLiU',serif}html[l
 .project-copy .text-link{margin-top:20px}
 @media(max-width:1050px){.featured-grid{grid-template-columns:1fr;gap:36px}.featured-project{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.featured-copy{padding:0}.selected-work-section{padding-block:65px}}
 @media(max-width:640px){.featured-project{display:block}.featured-copy{padding-top:22px}.featured-grid{gap:42px}.selected-work-section{padding-block:55px}.featured-copy h3{font-size:28px}.featured-copy>p:not(.project-kind){font-size:18px}.project-kind{font-size:14px}.project-screenshot figcaption{font-size:12px}.project-copy h2{margin-bottom:18px;font-size:34px}.project-technologies li{font-size:13px}.project{scroll-margin-top:90px}}
-/* Supplied turquoise identity and founder background. */
+/* Supplied turquoise identity and founder photograph. */
 .brand-logotype{width:270px;height:auto;display:block}
 .site-footer .brand-logotype{width:240px}
 .portrait>img{width:100%;height:auto;aspect-ratio:707/942;object-fit:cover;object-position:center;max-height:590px;border:1px solid var(--line)}
 .cta-section{background:#153a42}
-.professional-background{padding-block:45px 48px;border-bottom:1px solid var(--line)}
-.professional-background-intro{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:28px}
-.professional-background h2{font:600 16px/1.6 var(--sans);letter-spacing:0;color:var(--accent)}
-.professional-background-intro p{font-size:14px;color:var(--muted);max-width:520px}
-.organization-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 40px}
-.organization-list li{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0;min-height:105px;line-height:1.4;color:var(--ink);text-align:center}
-.organization-logo{height:62px;width:100%;display:flex;align-items:center;justify-content:center}
-.organization-logo img{width:auto;height:auto;max-width:200px;max-height:52px;object-fit:contain}
-.organization-name{display:block;margin-top:12px;font-size:13px;color:var(--muted)}
-.organization-text{font-size:24px;font-weight:600;letter-spacing:-.035em}
-.professional-background+.section{padding-top:85px}
-.about-founder+.professional-background{padding-top:0;margin-bottom:70px}
-@media(max-width:1050px){.brand-logotype{width:250px}.professional-background-intro{display:block}.professional-background-intro p{margin-top:8px}.organization-list{gap:24px}.organization-logo img{max-width:170px}}
-@media(max-width:640px){.brand-logotype{width:220px}.site-footer .brand-logotype{width:230px}.professional-background{padding-block:32px 36px}.professional-background h2{font-size:17px}.professional-background-intro p{font-size:15px}.organization-list{grid-template-columns:1fr 1fr;gap:22px 20px}.organization-logo img{max-width:100%;max-height:46px}.organization-name{font-size:12px}.organization-text{font-size:21px}.professional-background+.section{padding-top:55px}.about-founder+.professional-background{margin-bottom:50px}.portrait>img{max-height:none}}
-@media(max-width:380px){.brand-logotype{width:190px}.organization-list{gap:20px 15px}.organization-text{font-size:19px}}
+@media(max-width:1050px){.brand-logotype{width:250px}}
+@media(max-width:640px){.brand-logotype{width:220px}.site-footer .brand-logotype{width:230px}.portrait>img{max-height:none}}
+@media(max-width:380px){.brand-logotype{width:190px}}

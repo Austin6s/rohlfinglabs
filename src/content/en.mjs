@@ -146,8 +146,8 @@ export default {
   founder: {
     "label": "04 / THE PERSON BEHIND THE WORK",
     "title": "Engineering depth.\nA personal approach.",
-    "text": "Work directly with Austin Rohlfing, an American senior data engineer based in Taiwan and the founder of Rohlfing Labs.",
-    "detail": "My background spans enterprise data infrastructure, Azure Databricks, and integration across business systems. I bring that experience to each project, from defining a realistic scope to building software that can be maintained and extended.",
+    "text": "Rohlfing Labs brings enterprise engineering experience to focused software, data, and AI projects. You work directly with founder Austin Rohlfing, an American engineer based in Taiwan.",
+    "detail": "My work at Nationwide Mutual Insurance and Veterinary Practice Partners spans data platforms, business-system integration, and technical leadership. I bring that experience to clear project scopes, dependable architecture, and software built to be maintained.",
     "link": "Meet Austin",
     "role": "Founder · Software & Data Engineering",
     "photo": "Founder portrait",
@@ -157,14 +157,15 @@ export default {
   },
   about: {
     "label": "ABOUT ROHLFING LABS",
-    "title": "Curiosity is the start.\nUseful is the goal.",
-    "intro": "A founder-led engineering practice for organizations that want to make technology work better.",
+    "title": "Enterprise experience.\nDirect collaboration.",
+    "intro": "Software, data, and AI engineering grounded in real business systems, with direct access to the person designing and building your solution.",
     "heading": "Hi, I’m Austin.",
     "paragraphs": [
-      "I’m an American software and data engineering professional living in Taiwan, and the founder of Rohlfing Labs. I enjoy getting to the heart of difficult problems and turning that understanding into practical technology.",
-      "My professional foundation is in senior data engineering, with substantial experience in enterprise data infrastructure, Azure Databricks, and integration across operational systems. That work has taught me to value clear architecture, reliable data, and systems that can be maintained as requirements change.",
-      "Alongside that work, I build software products, business websites, and multilingual content systems. My projects include a multi-currency budgeting application and publishing tools that combine AI-assisted translation with human review. For document search and other AI workflows, I start by testing a specific use case and defining how its quality will be assessed.",
-      "Rohlfing Labs brings these interests together. It is a new business, built on my existing professional experience. When we work together, you work directly with me."
+      "I’m Austin Rohlfing, the founder of Rohlfing Labs. I’m an American software and data engineer based in Taiwan, bringing enterprise platform experience to websites, custom applications, and data systems for businesses of different sizes.",
+      "At Veterinary Practice Partners, my work has included co-designing a Databricks data platform, implementing governance and sensitive-data controls, and building event-driven systems. That experience connects architecture decisions to the everyday needs of the people using the data.",
+      "At Nationwide Mutual Insurance, I led ETL development and an engineering team delivering data projects across multiple systems. The work combined Python, SQL, and Spark with close collaboration between business stakeholders and engineers.",
+      "Alongside that experience, I build software products, business websites, and multilingual content systems. My projects include a multi-currency budgeting application and publishing tools that combine AI-assisted translation with human review.",
+      "Rohlfing Labs brings this experience into a founder-led business. I stay involved from the first conversation through design and implementation, with a clear scope and an emphasis on systems you can operate, maintain, and extend."
     ],
     "background": "A foundation in real systems.",
     "skills": [
@@ -189,7 +190,7 @@ export default {
         "Based in Taiwan, with an American background and experience working with international businesses."
       ]
     ],
-    "experienceNote": "These capabilities reflect Austin’s professional background and areas of development; they are not a list of past Rohlfing Labs client engagements."
+    "experienceNote": "Experience with enterprise platforms informs how I scope projects, choose architecture, and plan for long-term operation."
   },
   work: {
     "label": "WORK & EXPLORATIONS",
