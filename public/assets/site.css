@@ -103,3 +103,47 @@ html[lang="zh-Hant"]{--serif:'Noto Serif TC','Songti TC','PMingLiU',serif}html[l
 .about-bio .ranking-note p{font-size:15px;line-height:1.8;margin:0;color:var(--copy)}
 .ranking-note .text-link{font-size:14px;padding-block:8px;margin-top:8px}
 @media(max-width:700px){.hero-credibility{font-size:15px;margin-top:18px}.about-founder{scroll-margin-top:100px}.ranking-note{padding:16px 18px}.about-bio .ranking-note p{font-size:15px}}
+
+/* Concise edition: fewer sections, shorter copy, and a tighter reading rhythm. */
+.hero{min-height:650px;padding-block:60px}
+.hero-description{max-width:410px}
+.hero-visual{padding-top:0}
+.systems-figure{padding-top:20px;max-width:510px;margin-left:auto}
+.section{padding-block:76px}
+.concise-services{border-top:1px solid var(--line)}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:36px}
+.section-heading .eyebrow{margin-bottom:15px}
+.section-heading h2{font-size:clamp(35px,3vw,46px)}
+.section-heading>.text-link{flex-shrink:0}
+.service-card{min-height:260px;padding:25px 25px 0}
+.service-card-top{margin-bottom:22px}
+.service-card>p{max-width:100%;margin-bottom:15px}
+.service-card-bottom{justify-content:flex-end;border:0;padding-block:10px 20px}
+.selected-work-section{padding-block:72px}
+.project-thumbnail{display:block}
+.project-thumbnail:hover .project-screenshot{border-color:var(--accent)}
+.featured-copy>p:not(.project-kind){margin-bottom:0}
+.featured-copy h3{font-size:26px}
+.founder-section{padding-block:80px;gap:100px;grid-template-columns:1fr .6fr}
+.founder-section .portrait{max-width:350px;margin-left:auto}
+.founder-copy .body-large{max-width:460px;font-size:19px}
+.cta-section{padding-block:52px}
+.cta-section h2{font-size:clamp(35px,3.2vw,46px)}
+.page-intro{padding-block:65px 50px}
+.service-detail{padding-block:55px;gap:80px}
+.detail-icon{margin-bottom:22px}
+.service-detail h2{font-size:35px}
+.service-detail-content>div{margin-bottom:22px}
+.scope-list{margin-top:18px}
+.project,.project+.project{padding-block:45px;gap:65px}
+.project-copy>p:not(.project-disclaimer){font-size:17px}
+.about-founder{gap:90px;padding-block:45px 75px}
+.about-portrait{max-width:360px}
+.about-bio p{font-size:18px}
+.background-section{padding-block:60px}
+.contact-grid{padding-block:45px 70px}
+.contact-privacy{margin-top:22px;border:0;padding:0}
+.contact-location{padding-top:0}
+.contact-location .status-dot{top:12px}
+@media(max-width:1050px){.hero{min-height:590px}.service-card{padding-inline:20px;min-height:260px}.founder-section{gap:55px;grid-template-columns:1fr .7fr}.project,.project+.project{gap:35px}.service-detail{gap:45px}.about-founder{gap:45px}.featured-copy h3{font-size:25px}}
+@media(max-width:700px){.hero{padding-block:42px;min-height:0;gap:32px}.hero-visual{max-width:340px}.systems-figure{padding-top:16px}.systems-art{max-height:245px}.figure-heading{font-size:11px}.section{padding-block:48px}.section-heading{display:block;margin-bottom:28px}.section-heading>.text-link{margin-top:15px}.section-heading h2{font-size:36px}.service-card{min-height:0;padding:23px 23px 0}.service-card>p{font-size:17px}.service-card-bottom{padding-bottom:16px}.selected-work-section{padding-block:48px}.featured-grid{gap:32px}.founder-section{grid-template-columns:1fr;padding-block:50px;gap:32px}.founder-section .portrait{max-width:300px;margin:0}.founder-copy h2{font-size:36px}.founder-copy .body-large{font-size:18px;margin-top:22px}.cta-section{padding-block:38px}.cta-inner{gap:22px}.cta-section h2{font-size:35px}.page-intro{padding-block:42px 34px}.page-intro .body-large{margin-top:22px}.service-detail{padding-block:38px;gap:25px}.service-detail h2{font-size:32px}.detail-icon{margin-bottom:18px}.service-detail-content>div:last-child{margin-bottom:0}.project,.project+.project{padding-block:32px;gap:25px}.project-copy h2{font-size:32px}.about-founder{padding-block:30px 45px;gap:30px}.about-portrait{max-width:300px}.about-bio h2{font-size:33px}.about-bio p{font-size:18px}.background-section{padding-block:45px}.contact-grid{padding-block:32px 50px;gap:30px}}
