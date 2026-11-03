@@ -86,7 +86,7 @@ Use **Rohlfing Labs**, with both words capitalized and a space, for the company 
 - `public/assets/social-card.svg` — editable social artwork.
 - `public/assets/social-card.png` — 1200 × 630 raster export for social platforms.
 
-Re-export the social PNG after editing its SVG. Service and project illustrations are original graphics. Project illustrations are visibly identified as illustrations, not screenshots. No stock photography, La Varieta assets, or generated headshots are used.
+Re-export the social PNG after editing its SVG. The service icons and engineering diagram are original graphics. Portfolio thumbnails are actual screenshots of public project pages, captured with the owner's permission. Their sources and capture details are recorded in `public/assets/projects/README.md`. No private dashboards or generated headshots are used.
 
 The typography combines self-hosted Manrope, an italic system serif, and platform-appropriate Traditional Chinese fonts. Body text, navigation, controls, headings, and captions have dedicated responsive sizes; phone body copy is generally 16–18 pixels. Manrope is distributed under the SIL Open Font License in `public/assets/Manrope-OFL.txt`; source: [Google Fonts' Manrope family](https://github.com/google/fonts/tree/main/ofl/manrope). Chinese uses system fonts to avoid a large CJK download.
 
@@ -94,7 +94,7 @@ The typography combines self-hosted Manrope, an italic system serif, and platfor
 
 - **Email:** `site.config.mjs` defaults to the provided `rohlfinglabs@gmail.com`. `CONTACT_EMAIL` can override it. The address opens a localized prompt in the visitor's own mail application. No email is sent from this website. If `email` is deliberately set to `null`, the contact page shows an explicit placeholder.
 - **Founder photograph:** Add an optimized image such as `public/assets/austin-rohlfing.webp` and set `headshot: 'assets/austin-rohlfing.webp'`. The current AR monogram remains labeled as a photo placeholder. Aim for under 200 KB.
-- **Project permissions:** La Varieta links to its public website and uses an original illustration. The Archdiocese entry explicitly describes a prototype, without implying a paid engagement, endorsement, production deployment, or outcome. No Archdiocese materials are published. Add screenshots only with permission.
+- **Projects:** `src/content/projects.mjs` holds shared URLs, screenshot dimensions, technologies, and both language versions of each case study. Set `featured: true` to include a project on the homepage. The owner authorized these workspace projects for portfolio use. The Taipei Archdiocese entry remains a public prototype; its public URL does not establish an official deployment, endorsement, or paid engagement.
 - **Business details:** No phone number, registered company status, client counts, certifications, prices, or results have been invented. Add verified details when appropriate.
 
 ## Optional hosting portability

@@ -1,10 +1,19 @@
-import { esc, lines, arrow, label, link, cta, portrait, systemsArt, miniIcon, projectArt } from './components.mjs';
+import { esc, lines, arrow, label, link, cta, portrait, systemsArt, miniIcon } from './components.mjs';
+import { localizedProjects } from '../content/projects.mjs';
+
+function projectImage(project, c, url) {
+  return `<figure class="project-screenshot"><img src="${url.asset(`assets/projects/${project.image}`)}" width="${project.width}" height="${project.height}" alt="${esc(project.alt)}" loading="lazy" decoding="async"><figcaption>${esc(project.disclaimer ? c.work.prototypeScreenshot : c.work.screenshot)}<span aria-hidden="true">↗</span></figcaption></figure>`;
+}
+
+function selectedWork(c, url) {
+  return `<section class="selected-work-section"><div class="container"><div class="section-intro"><div>${label(c.selectedWork.label)}<h2>${lines(c.selectedWork.title)}</h2></div><div><p class="body-large">${esc(c.selectedWork.note)}</p>${link(url('work'), c.selectedWork.link)}</div></div><div class="featured-grid">${localizedProjects(c.lang).filter(p => p.featured).map(p => `<article class="featured-project">${projectImage(p,c,url)}<div class="featured-copy"><p class="project-kind">${esc(p.kind)} <span>· ${esc(p.status)}</span></p><h3><a href="${url('work')}#${p.id}">${esc(p.name)}${arrow(true)}</a></h3><p>${esc(p.summary)}</p>${link(`${url('work')}#${p.id}`, c.selectedWork.details)}</div></article>`).join('')}</div></div></section>`;
+}
 
 export function home(c, url, config) {
   return `<section class="hero container"><div class="hero-copy">${label(c.eyebrow)}<h1>${esc(c.hero.first)}<br><em>${esc(c.hero.second)}<br>${esc(c.hero.third)}</em></h1><p class="hero-description">${esc(c.hero.text)}</p><div class="hero-actions">${link(url('contact'), c.hero.cta, 'button button-dark', true)}${link(url('services'), c.hero.secondary, 'quiet-link')}</div><p class="location"><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.location)}</p></div><div class="hero-visual">${systemsArt(c)}</div></section>
   <div class="capability-strip"><div class="container"><span class="strip-title">SOFTWARE, DATA & AI ENGINEERING</span><div>${c.hero.bottom.map((t,i) => `<span><b>0${i+1}</b>${esc(t)}</span>`).join('')}</div><span class="strip-symbol" aria-hidden="true">↗</span></div></div>
   <section class="section container" id="expertise"><div class="section-intro"><div>${label(c.intro.label)}<h2>${lines(c.intro.title)}</h2></div><div><p class="body-large">${esc(c.intro.text)}</p>${link(url('services'), c.intro.link)}</div></div><div class="service-grid">${c.services.map(s => `<a class="service-card" href="${url('services')}#${s.id}"><div class="service-card-top">${miniIcon(s.id)}<span class="index">${s.n} /</span></div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p><div class="service-card-bottom"><span>${esc(s.tags[0])}</span>${arrow(true)}</div></a>`).join('')}</div></section>
-  <section class="solutions-section"><div class="container"><div class="section-intro"><div>${label(c.solutions.label)}<h2>${lines(c.solutions.title)}</h2></div><p class="muted intro-note">${esc(c.solutions.note)}</p></div><div class="solutions-list">${c.solutions.items.map(([title,text,tag],i) => `<a class="solution-row" href="${url('services')}#${['software','data','ai'][i]}"><span class="index">0${i+1}</span><h3>${esc(title)}</h3><div><p>${esc(text)}</p><span class="small-tag">${esc(tag)}</span></div>${arrow(true)}</a>`).join('')}</div></div></section>
+  ${selectedWork(c,url)}
   ${approach(c)}
   <section class="founder-section container"><div class="founder-copy">${label(c.founder.label)}<h2>${lines(c.founder.title)}</h2><p class="body-large">${esc(c.founder.text)}</p><p class="muted">${esc(c.founder.detail)}</p>${link(url('about'), c.founder.link)}</div>${portrait(c, config.headshot ? url.asset(config.headshot) : null)}</section>${cta(c,url)}`;
 }
@@ -24,7 +33,7 @@ export function services(c, url) {
 }
 
 export function work(c, url) {
-  return `${pageIntro(c.work.label, c.work.title, c.work.intro)}<div class="container projects"><article class="project"><div class="project-image">${projectArt(c, 'web')}</div><div class="project-copy">${label(c.work.projectLabel)}<span class="project-status">${esc(c.work.status1)}</span><h2>${esc(c.work.title1)}</h2><p class="project-type">${esc(c.work.type1)}</p><p>${esc(c.work.desc1)}</p><h3 class="scope-label">${esc(c.work.scope)}</h3><ul class="scope-list">${c.work.scope1.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>${link('https://lavarietasourcing.com/',c.work.link,'text-link',true)}</div></article><article class="project project-reverse"><div class="project-image">${projectArt(c,'cms')}</div><div class="project-copy">${label(c.work.projectLabel2)}<span class="project-status">${esc(c.work.status2)}</span><h2>${esc(c.work.title2)}</h2><p class="project-type">${esc(c.work.type2)}</p><p>${esc(c.work.desc2)}</p><h3 class="scope-label">${esc(c.work.scope)}</h3><ul class="scope-list">${c.work.scope2.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><p class="project-disclaimer">${esc(c.work.disclaimer)}</p></div></article><div class="work-next"><span aria-hidden="true">＋</span><div><h2>${esc(c.work.next)}</h2><p>${esc(c.work.nextText)}</p></div></div></div>${cta(c,url)}`;
+  return `${pageIntro(c.work.label, c.work.title, c.work.intro)}<div class="container projects">${localizedProjects(c.lang).map(p => `<article class="project" id="${p.id}"><div class="project-image">${projectImage(p,c,url)}</div><div class="project-copy">${label(p.kind)}<span class="project-status">${esc(p.status)}</span><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p><h3 class="scope-label">${esc(c.work.scope)}</h3><ul class="scope-list">${p.scope.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><div class="project-technologies"><span class="small-tag">${esc(c.work.stack)}</span><ul>${p.technologies.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>${p.disclaimer ? `<p class="project-disclaimer">${esc(p.disclaimer)}</p>` : ''}${link(p.url,p.link,'text-link',true)}</div></article>`).join('')}</div>${cta(c,url)}`;
 }
 
 export function about(c, url, config) {

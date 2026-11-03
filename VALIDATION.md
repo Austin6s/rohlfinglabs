@@ -1,4 +1,19 @@
-# Initial implementation validation
+# Website validation
+
+## Positioning and portfolio refinement — November 3, 2026
+
+- Production build and `npm test` pass: 11 HTML documents, 295 local links/assets, localized metadata, structured data, sitemap, image dimensions/alt text, and asset budgets.
+- All 10 English and Traditional Chinese routes checked in Chromium at 320, 390, 768, 1024, and 1440 pixels. No horizontal overflow or JavaScript page errors after correcting the narrow-screen project heading.
+- All project images loaded and decoded successfully. Reviewed actual project captures and the rendered homepage/Work layouts on desktop and phone.
+- axe-core 4.11.0 reports no detected violations for all 10 pages at 390 and 1440 pixels under WCAG 2 A/AA, WCAG 2.1 AA, and best-practice tags.
+- Verified mobile navigation, Escape behavior, equivalent-page language switching, navigation without JavaScript, keyboard skip link, and nested 404 handling.
+- Verified both localized contact links point to `rohlfinglabs@gmail.com` with encoded subjects and multiline prompts, including at 320 pixels. No messages were sent.
+- All four portfolio destinations returned HTTP 200. BudgetAnywhere uses its public welcome page screenshot; private financial data and CMS accounts were not accessed. The Taipei Archdiocese project is explicitly a public prototype in both languages.
+- Cloudflare MCP confirms the existing DNS-only GitHub Pages A/AAAA records and `www` CNAME. GitHub confirms the Actions publishing source, `rohlfinglabs.com` custom domain, and HTTPS enforcement. Deployment configuration is unchanged.
+- No application dependencies or backend services were added. Portfolio captures total approximately 500 KB and load lazily with reserved dimensions.
+- Remaining asset: Austin's photograph. Its existing monogram is explicitly labeled as a placeholder. A future BudgetAnywhere dashboard capture should use shareable demonstration data; the current image is its real public welcome screen.
+
+## Initial implementation validation
 
 Validated locally on November 3, 2026. The initial checks were repeated after the branding, typography, contact, and production-domain update. Live deployment verification is recorded separately below.
 
