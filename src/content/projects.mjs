@@ -64,7 +64,7 @@ export const projects = [
         "Database-enforced balanced transactions",
         "Installable web application"
       ],
-      "alt": "BudgetAnywhere public welcome page",
+      "alt": "BudgetAnywhere landing page with a multi-currency sample household",
       "link": "Explore BudgetAnywhere"
     },
     "zh-Hant": {
@@ -78,7 +78,7 @@ export const projects = [
         "由資料庫確保分錄平衡",
         "可安裝的網頁應用程式"
       ],
-      "alt": "BudgetAnywhere 公開歡迎頁面",
+      "alt": "BudgetAnywhere 首頁，展示多幣別家庭範例",
       "link": "探索 BudgetAnywhere"
     }
   },
