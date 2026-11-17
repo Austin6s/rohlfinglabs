@@ -1,17 +1,16 @@
-# Concise design — local review
+# Concise design — adopted for production
 
-This checkout is the `design/concise` branch in a separate local worktree. The original checkout at `../rohlfinglabs` remains on `main` at `2b6fca2`; the production website is unchanged. This branch has not been pushed or deployed.
+The concise design and the subsequent gold/turquoise experiment were consolidated into `rohlfinglabs` on `main` on November 17, 2026. The separate `rohlfinglabs-concise` worktree is no longer needed. Its commits remain in this repository's history.
 
-Open <http://localhost:4322/> or <http://localhost:4322/zh-tw/> while the local preview is running. To restart it:
+Run from `/home/austin/projects/repos/rohlfinglabs`:
 
 ```bash
-cd /home/austin/projects/repos/rohlfinglabs-concise
-PORT=4322 npm run dev
+npm run dev
 ```
 
-Compare with <https://rohlfinglabs.com/>. This is an alternative for review; adopting it is a separate decision.
+Open <http://127.0.0.1:4321/> or <http://127.0.0.1:4321/zh-tw/>. Set `PORT=4322` to use the previous review URL. Production is <https://rohlfinglabs.com/> after the `main` deployment completes.
 
-The palette, typography, logo, diagram, real screenshots, founder photograph, Fortune 100 credential, bilingual routes, and saved dark-mode behavior are retained. The homepage now concentrates on services, selected work, and the founder. Repeated process explanations and lengthy illustrative scenarios are removed, and interior pages are shorter too.
+The concise homepage concentrates on services, selected work, and the founder. Interior pages are shorter too. The adopted hybrid palette combines gold header/footer logos, brass buttons and details, warm ivory surfaces, and the existing turquoise headings and illustrations. Dark mode retains the gold and lightens the logo's charcoal lettering. Both languages, project screenshots, founder photograph, and Fortune 100 credential are retained.
 
 Approximate English word counts within the main content, excluding navigation and footer:
 
@@ -26,6 +25,6 @@ Approximate English word counts within the main content, excluding navigation an
 
 The Chinese homepage decreased from 936 to 416 Han characters using the same content boundary. These are comparison measures, not reading-time estimates.
 
-Validation: `npm test` passes for 11 documents and 334 local links/assets. Chromium checked all 10 localized routes at 320, 390, 768, 1024, and 1440 pixels in both themes: 100 combinations, no horizontal overflow, no JavaScript errors, and no detected axe-core WCAG/best-practice violations at the audited desktop and phone sizes. Theme persistence, system preference changes, storage restrictions, keyboard switching, cross-tab updates, no-JavaScript navigation, and print colors passed.
+Original concise review validation (before the gold experiment): `npm test` passes for 11 documents and 334 local links/assets. Chromium checked all 10 localized routes at 320, 390, 768, 1024, and 1440 pixels in both themes: 100 combinations, no horizontal overflow, no JavaScript errors, and no detected axe-core WCAG/best-practice violations at the audited desktop and phone sizes. Theme persistence, system preference changes, storage restrictions, keyboard switching, cross-tab updates, no-JavaScript navigation, and print colors passed.
 
-Screenshots are in the ignored `artifacts/` directory. No dependencies, domain records, hosting configuration, or production source files were changed.
+Original review screenshots are preserved in the ignored `artifacts/concise-review/` directory. The adoption uses the existing GitHub Pages deployment without new dependencies or hosting services.

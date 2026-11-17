@@ -1,5 +1,12 @@
 # Website validation
 
+## Concise design adoption — November 17, 2026
+
+- Merged the concise design and the reviewed gold/turquoise palette and logos into `main`, retaining the existing repository history, production hosting configuration, and owner infrastructure rules.
+- `npm test` passes for 11 generated documents and 356 local links/assets.
+- Chromium checked all 10 English/Traditional Chinese routes in light and dark modes at 320, 390, and 1440 pixels (60 combinations), with no horizontal overflow, broken HTML images, or JavaScript errors.
+- Compared the consolidated source and assets against the concise checkout before removing it. Preserved its ignored review screenshots in `artifacts/concise-review/`.
+
 ## Fortune 100 founder credential — November 3, 2026
 
 - Verified Nationwide's No. 69 position on the 2026 Fortune 500 using Fortune's ranking and [Nationwide's official June 3, 2026 announcement](https://news.nationwide.com/from-mutual-roots-to-a-modern-leader-nationwide-rises-to-no-69-on-fortune-500-list/). The publication is Fortune, not Forbes. The explicit year describes the company ranking, rather than Austin's employment dates.

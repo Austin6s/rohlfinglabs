@@ -1,6 +1,6 @@
 # Rohlfing Labs
 
-This checkout is the **concise design for local review**, on `design/concise`. See [REVIEW.md](REVIEW.md) for preview instructions and the copy comparison. The production checkout at `../rohlfinglabs` remains unchanged; this branch has not been published.
+The production site uses the concise bilingual design with gold branding, turquoise accents, and warm ivory surfaces. Work in this checkout on `main`; the former `rohlfinglabs-concise` review checkout has been consolidated here. See [REVIEW.md](REVIEW.md) for the design notes.
 
 A bilingual, founder-led software, data, and AI engineering website. English is served at `/`; Traditional Chinese at `/zh-tw/`. Each language has Home, Expertise, Work, About, and Contact pages.
 
@@ -80,9 +80,10 @@ Edit the language dictionaries for copy changes. Add new page templates to `view
 
 ## Brand and assets
 
-Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The supplied turquoise artwork is used unchanged as the visual wordmark. The light theme pairs turquoise and dark charcoal with pale teal surfaces; darker teal is used for readable text and controls. Brand exports are:
+Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The header and footer use the supplied gold artwork. The light theme pairs warm ivory with turquoise headings and illustrations, charcoal text, and brass-gold buttons and details. Small gold text uses a darker shade for readability. Brand exports are:
 
-- `public/assets/rohlfing-labs-logo.png` — transparent horizontal logotype, trimmed and resized from `media/logotype_turquoise.png`.
+- `public/assets/rohlfing-labs-logo-gold.png` — original supplied gold logotype. The shared brand component crops transparent margins with an SVG viewport and lightens charcoal lettering in dark mode while preserving the gold.
+- `public/assets/rohlfing-labs-logo.png` — retained turquoise logotype for earlier brand exports.
 - `public/assets/rohlfing-labs-mark.png` — supplied symbol, trimmed and resized from `media/logo_turquoise.png`.
 - Matching `.svg` exports wrap these raster images; they are not newly traced vector artwork.
 - `public/assets/favicon.svg` and `favicon.png` — matching browser icon.
@@ -93,7 +94,7 @@ Re-export the social PNG after editing its SVG. The service icons and engineerin
 
 The typography combines self-hosted Manrope, an italic system serif, and platform-appropriate Traditional Chinese fonts. Body text, navigation, controls, headings, and captions have dedicated responsive sizes; phone body copy is generally 16–18 pixels. Manrope is distributed under the SIL Open Font License in `public/assets/Manrope-OFL.txt`; source: [Google Fonts' Manrope family](https://github.com/google/fonts/tree/main/ofl/manrope). Chinese uses system fonts to avoid a large CJK download.
 
-The dark theme uses charcoal surfaces, light text, and turquoise accents. The navigation's moon/sun button toggles themes; on phones it is inside the menu. The initial theme follows `prefers-color-scheme`. Explicit choices are saved in the `rohlfing-theme` localStorage key, shared across languages and synchronized between tabs. Removing that key restores system following. `theme.js` applies a saved choice before styles load; system colors remain available without JavaScript. Screen-only theme overrides preserve the light palette for printing. Semantic CSS variables cover surfaces, text, buttons, and the SVG diagram; the wordmark adapts through a CSS filter while photos and project screenshots retain their original colors.
+The dark theme uses charcoal surfaces, light text, turquoise accents, and gold buttons and details. The navigation's moon/sun button toggles themes; on phones it is inside the menu. The initial theme follows `prefers-color-scheme`. Explicit choices are saved in the `rohlfing-theme` localStorage key, shared across languages and synchronized between tabs. Removing that key restores system following. `theme.js` applies a saved choice before styles load; system colors remain available without JavaScript. Screen-only theme overrides preserve the light palette for printing. Semantic CSS variables cover surfaces, text, buttons, and the SVG diagram; the gold wordmark adapts through an inline SVG filter while photos and project screenshots retain their original colors.
 
 ## Content configuration
 
