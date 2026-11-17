@@ -1,7 +1,20 @@
 export const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const lines = text => esc(text).replaceAll('\n', '<br>');
 export const arrow = (diagonal = false) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="${diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h15m-6-6 6 6-6 6'}"/></svg>`;
-export const brand = url => `<img class="brand-logotype" src="${url.asset('assets/rohlfing-labs-logo.png')}" alt="Rohlfing Labs" width="1016" height="168" decoding="async">`;
+// Crop the supplied artwork's transparent margins through the SVG viewport.
+// In dark mode, lift only its charcoal pixels so the original gold stays gold.
+export const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="71 193 2025 338" width="2025" height="338" role="img" aria-labelledby="gold-brand-title-${placement}">
+  <title id="gold-brand-title-${placement}">Rohlfing Labs</title>
+  <defs><filter id="gold-brand-night-${placement}" color-interpolation-filters="sRGB">
+    <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.126 -7.152 -0.722 0 3" result="charcoal"/>
+    <feComposite in="charcoal" in2="SourceAlpha" operator="in" result="mask"/>
+    <feFlood flood-color="#e3eeed" result="light"/>
+    <feComposite in="light" in2="mask" operator="in" result="light-text"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="light-text"/></feMerge>
+  </filter></defs>
+  <image class="gold-brand-day" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724"/>
+  <image class="gold-brand-night" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724" filter="url(#gold-brand-night-${placement})"/>
+</svg>`;
 export const link = (href, text, className = 'text-link', diagonal = false) => `<a class="${className}" href="${esc(href)}">${esc(text)}${arrow(diagonal)}</a>`;
 export const label = text => `<p class="eyebrow">${esc(text)}</p>`;
 export function header(c, page, url) {
@@ -16,7 +29,7 @@ export function header(c, page, url) {
     </nav></div></header>`;
 }
 export function footer(c, url) {
-  return `<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="${url('home')}">${brand(url)}</a><p>${esc(c.footer.tagline)}</p></div><div class="footer-nav">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
+  return `<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="${url('home')}">${brand(url, 'footer')}</a><p>${esc(c.footer.tagline)}</p></div><div class="footer-nav">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
 }
 export function cta(c, url) {
   return `<section class="cta-section"><div class="container cta-inner"><div>${c.cta.label ? label(c.cta.label) : ''}<h2>${lines(c.cta.title)}</h2></div>${link(url('contact'), c.cta.link, 'button button-light', true)}</div></section>`;
