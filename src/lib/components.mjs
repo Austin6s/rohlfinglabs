@@ -1,7 +1,20 @@
 export const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const lines = text => esc(text).replaceAll('\n', '<br>');
 export const arrow = (diagonal = false) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="${diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h15m-6-6 6 6-6 6'}"/></svg>`;
-export const brand = url => `<img class="brand-logotype" src="${url.asset('assets/rohlfing-labs-logo.png')}" alt="Rohlfing Labs" width="1016" height="168" decoding="async">`;
+// Crop the supplied artwork's transparent margins through the SVG viewport.
+// In dark mode, lift only its charcoal pixels so the original gold stays gold.
+export const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="71 193 2025 338" width="2025" height="338" role="img" aria-labelledby="gold-brand-title-${placement}">
+  <title id="gold-brand-title-${placement}">Rohlfing Labs</title>
+  <defs><filter id="gold-brand-night-${placement}" color-interpolation-filters="sRGB">
+    <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.126 -7.152 -0.722 0 3" result="charcoal"/>
+    <feComposite in="charcoal" in2="SourceAlpha" operator="in" result="mask"/>
+    <feFlood flood-color="#e3eeed" result="light"/>
+    <feComposite in="light" in2="mask" operator="in" result="light-text"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="light-text"/></feMerge>
+  </filter></defs>
+  <image class="gold-brand-day" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724"/>
+  <image class="gold-brand-night" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724" filter="url(#gold-brand-night-${placement})"/>
+</svg>`;
 export const link = (href, text, className = 'text-link', diagonal = false) => `<a class="${className}" href="${esc(href)}">${esc(text)}${arrow(diagonal)}</a>`;
 export const label = text => `<p class="eyebrow">${esc(text)}</p>`;
 export function header(c, page, url) {
@@ -16,10 +29,10 @@ export function header(c, page, url) {
     </nav></div></header>`;
 }
 export function footer(c, url) {
-  return `<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="${url('home')}">${brand(url)}</a><p>${esc(c.footer.tagline)}</p></div><div class="footer-nav">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
+  return `<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="${url('home')}">${brand(url, 'footer')}</a><p>${esc(c.footer.tagline)}</p></div><div class="footer-nav">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
 }
 export function cta(c, url) {
-  return `<section class="cta-section"><div class="container cta-inner"><div>${label(c.cta.label)}<h2>${lines(c.cta.title)}</h2></div>${link(url('contact'), c.cta.link, 'button button-light', true)}</div></section>`;
+  return `<section class="cta-section"><div class="container cta-inner"><div>${c.cta.label ? label(c.cta.label) : ''}<h2>${lines(c.cta.title)}</h2></div>${link(url('contact'), c.cta.link, 'button button-light', true)}</div></section>`;
 }
 export function portrait(c, asset) {
   return `<figure class="portrait">${asset ? `<img src="${esc(asset)}" alt="Austin Rohlfing" width="707" height="942" loading="lazy" decoding="async">` : `<div class="portrait-placeholder" role="img" aria-label="${esc(c.founder.photo)}"><div class="portrait-lines" aria-hidden="true"></div><span class="portrait-mono" aria-hidden="true">${esc(c.founder.monogram)}<span>↗</span></span><span class="portrait-note">${esc(c.founder.photoNote)}</span></div>`}<figcaption><strong>Austin Rohlfing</strong><span>${esc(c.founder.role)}</span></figcaption></figure>`;
@@ -35,7 +48,7 @@ export function systemsArt(c) {
   <g fill="var(--diagram-node)" stroke="var(--diagram-node-line)"><rect x="378" y="72" width="73" height="62" rx="3"/><rect x="378" y="189" width="73" height="62" rx="3"/><rect x="378" y="306" width="73" height="62" rx="3"/></g>
   <g fill="none" stroke="var(--diagram-strong)" stroke-width="1.4"><path d="m407 92-10 11 10 11m16-22 10 11-10 11m-14 5 10-32"/><ellipse cx="414" cy="209" rx="15" ry="6"/><path d="M399 209v22c0 8 30 8 30 0v-22m-30 11c0 8 30 8 30 0"/><path d="m414 321 4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/></g>
   <g class="diagram-text" fill="var(--diagram-label)" font-size="13" letter-spacing="1"><text x="25" y="46">${t[0]}</text><text x="239" y="294" text-anchor="middle" font-size="12">${t[1]}</text><text x="414" y="155" text-anchor="middle">${t[2]}</text><text x="414" y="272" text-anchor="middle">${t[3]}</text><text x="414" y="389" text-anchor="middle">${t[4]}</text></g><circle cx="540" cy="220" r="7" fill="var(--diagram-core)"/><circle cx="540" cy="220" r="3" fill="var(--diagram-accent)"/>
-  </svg><figcaption><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.figureNote)}<span class="figure-cross" aria-hidden="true">+</span></figcaption></figure>`;
+  </svg>${c.hero.figureNote ? `<figcaption><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.figureNote)}<span class="figure-cross" aria-hidden="true">+</span></figcaption>` : ''}</figure>`;
 }
 export function miniIcon(kind) {
   return `<svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">${kind === 'software' ? '<rect x="5" y="8" width="38" height="31" rx="2"/><path d="M5 16h38M10 12h2m3 0h2m3 0h2m-3 9-6 6 6 6m10-12 6 6-6 6m-5-13-3 14"/>' : kind === 'data' ? '<ellipse cx="24" cy="11" rx="16" ry="6"/><path d="M8 11v25c0 8 32 8 32 0V11M8 23c0 8 32 8 32 0"/>' : '<path d="m24 4 5 15 15 5-15 5-5 15-5-15-15-5 15-5zM37 5v8m-4-4h8"/>'}</svg>`;

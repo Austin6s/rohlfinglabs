@@ -1,8 +1,19 @@
 export default {
-  lang: 'en', locale: 'en_US', language: 'English',
-  nav: { home: 'Home', services: 'Expertise', work: 'Selected work', about: 'About', contact: 'Let’s talk' },
-  skip: 'Skip to content', menu: 'Menu', menuClose: 'Close menu', languageLabel: 'Choose language',
-  meta: {
+  "lang": "en",
+  "locale": "en_US",
+  "language": "English",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Let’s talk"
+  },
+  "skip": "Skip to content",
+  "menu": "Menu",
+  "menuClose": "Close menu",
+  "languageLabel": "Choose language",
+  "meta": {
     "home": [
       "Software, Data & AI Engineering",
       "Founder-led software, data, and AI engineering based in Taiwan. Thoughtfully built websites, business applications, data platforms, and intelligent systems."
@@ -24,18 +35,18 @@ export default {
       "Discuss a website, software application, data challenge, or AI integration with Rohlfing Labs. Based in Taiwan, with an international outlook."
     ]
   },
-  eyebrow: "Founder-led software, data & AI engineering",
-  hero: {
+  "eyebrow": "Founder-led software, data & AI engineering",
+  "hero": {
     "first": "Complex problems.",
     "second": "Thoughtful",
     "third": "technology.",
-    "text": "We design and build modern websites, custom software, data platforms, and practical AI systems around your business needs.",
-    "cta": "Tell us what you’re working on",
-    "secondary": "Explore our expertise",
-    "location": "Based in Taiwan. Built for a connected world.",
+    "text": "Websites, custom software, data platforms, and practical AI. Built around your business.",
+    "cta": "Discuss a project",
+    "secondary": "See the work",
+    "location": "Taiwan-based. International outlook.",
     "figure": "From business challenge to working solution",
-    "figureLabel": "THE THINKING BEHIND THE BUILD",
-    "figureNote": "A clear path through the complexity.",
+    "figureLabel": "FROM NEED TO SOLUTION",
+    "figureNote": "",
     "bottom": [
       "Software & web",
       "Data & architecture",
@@ -43,112 +54,108 @@ export default {
     ],
     "credibility": "Founded by a former Fortune 100 engineer."
   },
-  intro: {
-    "label": "01 / WHAT WE BUILD",
-    "title": "From your next website\nto your core systems.",
-    "text": "Reach customers in another language. Give your team better tools. Bring scattered data into reliable reporting. Start with a focused project, backed by experience in complex systems.",
-    "link": "Explore the services"
+  "intro": {
+    "label": "01 / SERVICES",
+    "title": "What we build.",
+    "link": "Explore services"
   },
-  services: [
+  "services": [
     {
       "id": "software",
       "n": "01",
       "name": "Software & Web",
-      "short": "Thoughtful experiences. Solid foundations.",
-      "text": "Publish in multiple languages, make customer inquiries easier, and give your team applications that fit their daily work.",
+      "text": "Websites and applications that make your business easier to run.",
       "tags": [
         "Websites & CMS",
         "Business applications",
         "Workflow automation"
       ],
-      "question": "Your business has moved forward. Has your software?",
-      "detail": "Give customers a clear view of your business, and give your team tools that make daily work easier. From a focused bilingual website to a custom operational application, the scope starts with what you actually need.",
+      "question": "A better experience for customers and teams.",
+      "detail": "From a bilingual business website to a custom internal tool, built to fit your workflow.",
       "items": [
         [
-          "Websites & multilingual CMS",
-          "Professional corporate websites, product catalogs, and inquiry journeys. Update content in Traditional Chinese and use AI-assisted translation with human review to reach other markets."
+          "Websites & CMS",
+          "Publish across languages and keep content easy to maintain."
         ],
         [
-          "Custom web applications",
-          "Customer portals, employee tools, and applications built around the way your organization operates."
+          "Custom applications",
+          "Portals, dashboards, and tools for everyday operations."
         ],
         [
-          "Automation & ongoing care",
-          "Connect repetitive workflows and existing tools. Plan for dependable hosting, documentation, and maintenance from the start."
+          "Automation & care",
+          "Connect existing tools, with hosting and handover planned."
         ]
-      ],
-      "outcome": "A useful starting point",
-      "example": "A Taiwanese exporter needs an English and Traditional Chinese website, a manageable product catalog, and a straightforward way for buyers to make inquiries."
+      ]
     },
     {
       "id": "data",
       "n": "02",
       "name": "Data & Architecture",
-      "short": "Connected systems. Clearer decisions.",
-      "text": "Connect business systems, improve data quality, and build reliable foundations for reporting and operations.",
+      "text": "Connected systems and reliable data for reporting and operations.",
       "tags": [
         "Data platforms",
         "Integration & pipelines",
         "Cloud architecture"
       ],
-      "question": "Bring your data into a system you can depend on.",
-      "detail": "Disconnected systems, brittle pipelines, and inconsistent definitions make everyday decisions harder. Build a data foundation that your organization can understand, operate, and evolve.",
+      "question": "Data your business can rely on.",
+      "detail": "Bring scattered information together in a platform your team can operate and trust.",
       "items": [
         [
-          "Platforms & cloud architecture",
-          "Architecture and implementation with Azure, Databricks, PostgreSQL, and lakehouse patterns, matched to workload and operating constraints."
+          "Platforms & architecture",
+          "Azure, Databricks, PostgreSQL, and lakehouse architecture."
         ],
         [
-          "Integration & reliable pipelines",
-          "ETL and ELT pipelines that connect operational systems, with attention to monitoring, recovery, and data quality."
+          "Integration & pipelines",
+          "ETL / ELT with monitoring, recovery, and quality checks."
         ],
         [
-          "Modeling, governance & analytics",
-          "Well-defined data models, ownership, and access. Analytics infrastructure and semantic layers that make information easier to use consistently."
+          "Models & governance",
+          "Shared definitions, clear ownership, and appropriate access."
         ]
-      ],
-      "outcome": "A useful starting point",
-      "example": "A growing business needs to bring data from several operational systems together, establish shared definitions, and give its teams a reliable view of performance."
+      ]
     },
     {
       "id": "ai",
       "n": "03",
       "name": "Applied AI",
-      "short": "Useful intelligence. Without the noise.",
-      "text": "Help employees find answers across documents, review translated content, and reduce repetitive work with practical AI integrations.",
+      "text": "Document search, assisted translation, and useful workflow automation.",
       "tags": [
         "Intelligent search",
         "AI integration",
         "Content & translation"
       ],
-      "question": "Start with a real problem. Make AI earn its place.",
-      "detail": "AI is useful when it solves a specific problem within a system people can trust. We explore the fit, define how quality will be evaluated, and build maintainable integrations with appropriate human oversight.",
+      "question": "AI with a clear job to do.",
+      "detail": "Test a focused use case, define quality, and build in human review where it matters.",
       "items": [
         [
-          "Document search & retrieval",
-          "Retrieval-augmented generation (RAG) and search experiences that help teams find relevant information in their own documents, with sources and access controls."
+          "Document intelligence",
+          "Search internal documents with RAG, sources, and access controls."
         ],
         [
-          "AI inside existing applications",
-          "Integrate AI into business tools for content processing, assisted translation, and repetitive workflows, with review where it matters."
+          "Content & translation",
+          "Assist publishing and content processing with human review."
         ],
         [
-          "Knowledge & information systems",
-          "Explore structured knowledge, semantic layers, and knowledge graphs when the problem calls for them. Start with a bounded prototype before a broader commitment."
+          "Workflow integration",
+          "Add useful AI capabilities to your existing applications."
         ]
-      ],
-      "outcome": "A useful starting point",
-      "example": "A team spends too much time searching internal documents. A scoped prototype can test whether source-linked retrieval improves that workflow before expanding it."
+      ]
     }
   ],
-  servicesPage: { label: 'OUR EXPERTISE', title: 'The right engineering.\nFor the real problem.', intro: 'Start with a clear business need. Bring in the software, data, and AI expertise the solution calls for.', note: 'One focused project or a more complex system. A clear scope comes first.', related: 'How we approach the work' },
-  selectedWork: {"label":"02 / SELECTED WORK","title":"Real projects.\nDifferent kinds of problems.","note":"Independent software, business websites, and multilingual publishing. A selection of Austin’s work.","link":"Explore all projects","details":"Project details"},
-  approach: { label: '03 / THE APPROACH', title: 'Thoughtful by design.\nPractical at every step.', intro: 'Direct collaboration with the person doing the engineering. Clear decisions, useful progress, and a system you can live with.', steps: [['Understand first.', 'Get close to the problem, the people, and the constraints. Agree on what a useful outcome looks like.'], ['Design with intention.', 'Choose the simplest architecture that fits. Define the scope, tradeoffs, and delivery plan before building.'], ['Build, test, refine.', 'Work in manageable steps, validate the important assumptions, and make progress visible.'], ['Make it yours.', 'Deliver the documentation, knowledge, and support plan needed to keep the solution useful.']] },
-  founder: {
-    "label": "04 / THE PERSON BEHIND THE WORK",
-    "title": "Engineering depth.\nA personal approach.",
-    "text": "Rohlfing Labs brings enterprise engineering experience to focused software, data, and AI projects. You work directly with founder Austin Rohlfing, an American engineer based in Taiwan.",
-    "detail": "My background includes engineering at a Fortune 100 company and building enterprise data platforms. I bring that experience to clear project scopes, dependable architecture, and maintainable software.",
+  "servicesPage": {
+    "label": "SERVICES",
+    "title": "Useful technology.\nBuilt for your business.",
+    "intro": "Software, data, and AI. Start with the problem you want to solve."
+  },
+  "selectedWork": {
+    "label": "02 / WORK",
+    "title": "Built to be useful.",
+    "link": "All projects"
+  },
+  "founder": {
+    "label": "03 / THE PERSON BEHIND THE WORK",
+    "title": "Engineering depth.\nPersonal attention.",
+    "text": "Work directly with Austin Rohlfing, an American engineer in Taiwan with Fortune 100 experience. Clear scope, regular progress, and a practical handover.",
     "link": "Meet Austin",
     "role": "Founder · Software & Data Engineering",
     "photo": "Founder portrait",
@@ -156,17 +163,15 @@ export default {
     "monogram": "AR",
     "caption": "Taiwan-based. International perspective."
   },
-  about: {
+  "about": {
     "label": "ABOUT ROHLFING LABS",
     "title": "Fortune 100 experience.\nDirect collaboration.",
-    "intro": "Software, data, and AI engineering grounded in real business systems, with direct access to the person designing and building your solution.",
+    "intro": "Enterprise engineering experience. A direct relationship with the person doing the work.",
     "heading": "Hi, I’m Austin.",
     "paragraphs": [
-      "I’m Austin Rohlfing, the founder of Rohlfing Labs. I’m an American software and data engineer based in Taiwan, bringing enterprise platform experience to websites, custom applications, and data systems for businesses of different sizes.",
-      "At Nationwide Mutual Insurance, a Fortune 100 company, I worked as a Senior Software Engineer (Lead ETL Developer). I led ETL development and an engineering team delivering data projects across multiple systems, combining Python, SQL, and Spark with close collaboration between business stakeholders and engineers.",
-      "At Veterinary Practice Partners, my work has included co-designing a Databricks data platform, implementing governance and sensitive-data controls, and building event-driven systems. That experience connects architecture decisions to the everyday needs of the people using the data.",
-      "Alongside that experience, I build software products, business websites, and multilingual content systems. My projects include a multi-currency budgeting application and publishing tools that combine AI-assisted translation with human review.",
-      "Rohlfing Labs brings this experience into a founder-led business. I stay involved from the first conversation through design and implementation, with a clear scope and an emphasis on systems you can operate, maintain, and extend."
+      "I’m Austin, an American software and data engineer based in Taiwan. I founded Rohlfing Labs to build useful, maintainable systems for businesses.",
+      "At Nationwide Mutual Insurance, I was a Senior Software Engineer and Lead ETL Developer. At Veterinary Practice Partners, my work included Databricks platform architecture, governance, and event-driven systems.",
+      "Today, that experience informs every website, application, and data project I build. You work directly with me, from the first conversation through delivery."
     ],
     "background": "A foundation in real systems.",
     "skills": [
@@ -177,38 +182,59 @@ export default {
       "Web applications & multilingual CMS",
       "Applied AI & information retrieval"
     ],
-    "values": [
-      [
-        "Understand the business.",
-        "A technically interesting solution only matters if it helps the organization using it."
-      ],
-      [
-        "Keep complexity accountable.",
-        "Every tool and architectural choice should earn its place. Favor clarity and maintainability."
-      ],
-      [
-        "Work across perspectives.",
-        "Based in Taiwan, with an American background and experience working with international businesses."
-      ]
-    ],
-    "experienceNote": "Experience with enterprise platforms informs how I scope projects, choose architecture, and plan for long-term operation.",
     "ranking": {
       "text": "Nationwide is ranked No. 69 on the 2026 Fortune 500, published by Fortune.",
       "sourceLabel": "2026 ranking source",
       "sourceUrl": "https://news.nationwide.com/from-mutual-roots-to-a-modern-leader-nationwide-rises-to-no-69-on-fortune-500-list/"
     }
   },
-  work: {
+  "work": {
     "label": "WORK & EXPLORATIONS",
-    "title": "Built with purpose.\nPresented with context.",
-    "intro": "Selected projects by Austin, including work predating Rohlfing Labs. Independent products, published websites, and technical prototypes are identified by their scope and status.",
+    "title": "A few things\nI’ve built.",
+    "intro": "Products, websites, and prototypes by Austin, including work before Rohlfing Labs. Each project’s status is shown.",
     "scope": "What I built",
     "stack": "Engineering",
     "screenshot": "Actual public-site screenshot",
     "prototypeScreenshot": "Actual prototype screenshot"
   },
-  contact: { label: 'START A CONVERSATION', title: 'What are you\nworking on?', intro: 'A clear brief is helpful. A fully formed specification isn’t necessary. Start with the problem you want to solve.', emailLabel: 'EMAIL AUSTIN', missingTitle: 'Contact details coming soon.', missingText: 'This website is being prepared for launch. A direct email address will be published here once it is ready.', emailAction: 'Start an email', emailSubject: 'A project for Rohlfing Labs', emailBody: 'Hi Austin,\n\nHere’s what we’re working on:\n\nThe problem we’d like to solve:\n\nOur rough timing:\n\n', prompt: 'A useful first message', prompts: ['A little about your business or organization', 'What isn’t working, or what you’d like to build', 'Any timing, budget, or technical constraints you already know'], afterTitle: 'A straightforward next step.', after: 'We can start by understanding your goals, discussing whether there’s a good fit, and deciding what a sensible first scope would look like.', locationTitle: 'Based in Taiwan.', locationText: 'Open to conversations with businesses in Taiwan, the United States, and beyond.', languages: 'Website available in English & Traditional Chinese.', privacy: 'No contact form, tracking cookies, or account required. Email opens in your own mail application.' },
-  cta: { label: 'LET’S MAKE SOMETHING USEFUL', title: 'A better way forward\nstarts with a conversation.', link: 'Tell us about your project' },
-  footer: { tagline: 'Complex problems. Thoughtful technology.', positioning: 'Software, Data & AI Engineering', location: 'Based in Taiwan · International outlook', copyright: 'Rohlfing Labs', back: 'Back to top', note: 'Independent practice. Direct collaboration.' },
-  notFound: { title: 'A little off the map.', text: 'This page could not be found. Let’s get you back to a useful starting point.', link: 'Back to the homepage' },
+  "contact": {
+    "label": "START A CONVERSATION",
+    "title": "Let’s talk.",
+    "intro": "Tell me what you want to build or improve. We’ll find a sensible starting point.",
+    "emailLabel": "EMAIL AUSTIN",
+    "missingTitle": "Contact details coming soon.",
+    "missingText": "This website is being prepared for launch. A direct email address will be published here once it is ready.",
+    "emailAction": "Start an email",
+    "emailSubject": "A project for Rohlfing Labs",
+    "emailBody": "Hi Austin,\n\nHere’s what we’re working on:\n\nThe problem we’d like to solve:\n\nOur rough timing:\n\n",
+    "prompt": "A few useful details",
+    "prompts": [
+      "Your business and the problem",
+      "Your timing and rough budget",
+      "Any existing tools or constraints"
+    ],
+    "afterTitle": "A straightforward next step.",
+    "after": "We can start by understanding your goals, discussing whether there’s a good fit, and deciding what a sensible first scope would look like.",
+    "locationTitle": "Based in Taiwan.",
+    "locationText": "Working with businesses in Taiwan and internationally.",
+    "languages": "Website available in English & Traditional Chinese.",
+    "privacy": "Email opens in your own mail app."
+  },
+  "cta": {
+    "title": "Have a project in mind?",
+    "link": "Discuss a project"
+  },
+  "footer": {
+    "tagline": "Complex problems. Thoughtful technology.",
+    "positioning": "Software, Data & AI Engineering",
+    "location": "Based in Taiwan · International outlook",
+    "copyright": "Rohlfing Labs",
+    "back": "Back to top",
+    "note": "Direct collaboration. Thoughtful engineering."
+  },
+  "notFound": {
+    "title": "A little off the map.",
+    "text": "This page could not be found. Let’s get you back to a useful starting point.",
+    "link": "Back to the homepage"
+  }
 };

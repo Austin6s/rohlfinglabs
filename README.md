@@ -1,5 +1,7 @@
 # Rohlfing Labs
 
+This checkout is the **concise design for local review**, on `design/concise`. See [REVIEW.md](REVIEW.md) for preview instructions and the copy comparison. The production checkout at `../rohlfinglabs` remains unchanged; this branch has not been published.
+
 A bilingual, founder-led software, data, and AI engineering website. English is served at `/`; Traditional Chinese at `/zh-tw/`. Each language has Home, Expertise, Work, About, and Contact pages.
 
 ## Production configuration
