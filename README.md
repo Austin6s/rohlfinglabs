@@ -64,7 +64,7 @@ Visitors receive plain HTML, CSS, one locally hosted font, and about 3 KB of Jav
 site.config.mjs          Public domain, email, and headshot configuration
 src/content/en.mjs      English content
 src/content/zh-tw.mjs    Traditional Chinese content
-src/lib/components.mjs  Navigation, footer, illustrations, and shared components
+src/lib/components.mjs  Navigation, footer, icons, and shared components
 src/lib/views.mjs       Page layouts
 public/assets/          CSS, menu JS, local font, logo assets, and social images
 public/CNAME            Intended custom domain
@@ -80,7 +80,7 @@ Edit the language dictionaries for copy changes. Add new page templates to `view
 
 ## Brand and assets
 
-Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The header and footer use the supplied gold artwork. The light theme pairs warm ivory with turquoise headings and illustrations, charcoal text, and brass-gold buttons and details. Small gold text uses a darker shade for readability. Brand exports are:
+Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The header and footer use the supplied gold artwork. The light theme pairs warm ivory with turquoise headings and service icons, charcoal text, and brass-gold buttons and details. Small gold text uses a darker shade for readability. Brand exports are:
 
 - `public/assets/rohlfing-labs-logo-gold.png` — original supplied gold logotype. The shared brand component crops transparent margins with an SVG viewport and lightens charcoal lettering in dark mode while preserving the gold.
 - `public/assets/rohlfing-labs-logo.png` — retained turquoise logotype for earlier brand exports.
@@ -90,11 +90,11 @@ Use **Rohlfing Labs**, with both words capitalized and a space, in written copy.
 - `public/assets/social-card.svg` — editable social artwork.
 - `public/assets/social-card.png` — 1200 × 630 raster export for social platforms.
 
-Re-export the social PNG after editing its SVG. The service icons and engineering diagram are original graphics. Portfolio thumbnails are actual screenshots of public project pages, captured with the owner's permission. Their sources and capture details are recorded in `public/assets/projects/README.md`. No private dashboards or generated headshots are used.
+Re-export the social PNG after editing its SVG. The service icons are original graphics. The homepage showcases actual Cake on Stick and BudgetAnywhere previews in place of the former engineering diagram. Portfolio images are actual screenshots of public project pages, captured with the owner's permission. Their sources and capture details are recorded in `public/assets/projects/README.md`. No private dashboards or generated headshots are used.
 
 The typography combines self-hosted Manrope, an italic system serif, and platform-appropriate Traditional Chinese fonts. Body text, navigation, controls, headings, and captions have dedicated responsive sizes; phone body copy is generally 16–18 pixels. Manrope is distributed under the SIL Open Font License in `public/assets/Manrope-OFL.txt`; source: [Google Fonts' Manrope family](https://github.com/google/fonts/tree/main/ofl/manrope). Chinese uses system fonts to avoid a large CJK download.
 
-The dark theme uses charcoal surfaces, light text, turquoise accents, and gold buttons and details. The navigation's moon/sun button toggles themes; on phones it is inside the menu. The initial theme follows `prefers-color-scheme`. Explicit choices are saved in the `rohlfing-theme` localStorage key, shared across languages and synchronized between tabs. Removing that key restores system following. `theme.js` applies a saved choice before styles load; system colors remain available without JavaScript. Screen-only theme overrides preserve the light palette for printing. Semantic CSS variables cover surfaces, text, buttons, and the SVG diagram; the gold wordmark adapts through an inline SVG filter while photos and project screenshots retain their original colors.
+The dark theme uses charcoal surfaces, light text, turquoise accents, and gold buttons and details. The navigation's moon/sun button toggles themes; on phones it is inside the menu. The initial theme follows `prefers-color-scheme`. Explicit choices are saved in the `rohlfing-theme` localStorage key, shared across languages and synchronized between tabs. Removing that key restores system following. `theme.js` applies a saved choice before styles load; system colors remain available without JavaScript. Screen-only theme overrides preserve the light palette for printing. Semantic CSS variables cover surfaces, text, buttons, and project preview frames; the gold wordmark adapts through an inline SVG filter while photos and project screenshots retain their original colors.
 
 ## Content configuration
 
@@ -104,7 +104,7 @@ The dark theme uses charcoal surfaces, light text, turquoise accents, and gold b
 - **Projects:** `src/content/projects.mjs` holds shared URLs, screenshot dimensions, technologies, and both language versions of each case study. Set `featured: true` to include a project on the homepage. The owner authorized these workspace projects for portfolio use. The Taipei Archdiocese entry remains a public prototype; its public URL does not establish an official deployment, endorsement, or paid engagement.
 - **Business details:** No phone number, registered company status, client counts, certifications, prices, or results have been invented. Add verified details when appropriate.
 
-CakeonStick is not currently included: its local repository has no project files and no verified public project materials were supplied. La Varieta and the Taipei prototype retain their existing, separately labeled project entries.
+Cake on Stick is included as a published bilingual small-business website, with an actual screenshot of its English homepage and copy checked against the public site and source repository. Four published projects are featured on the homepage; the Work page also includes the separately labeled Taipei prototype.
 
 ## Optional hosting portability
 

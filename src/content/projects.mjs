@@ -1,6 +1,47 @@
 // Shared facts and concise bilingual project notes.
 export const projects = [
   {
+    "id": "cakeonstick",
+    "url": "https://cakeonstick.com/",
+    "featured": true,
+    "image": "cakeonstick.jpg",
+    "width": 1440,
+    "height": 1000,
+    "technologies": [
+      "Astro",
+      "TypeScript",
+      "GitHub Pages"
+    ],
+    "en": {
+      "name": "Cake on Stick",
+      "kind": "Bilingual small-business website",
+      "status": "Published website",
+      "summary": "Handmade cakesicles, with a clear path from browsing to ordering.",
+      "description": "A Traditional Chinese and English website for a handmade cakesicle business in Taiwan, bringing product collections, celebration packages, and custom-order inquiries together.",
+      "scope": [
+        "Bilingual product and celebration-package catalog",
+        "Quick-order messages for LINE and Instagram",
+        "Responsive design with optimized product photography"
+      ],
+      "alt": "Cake on Stick English homepage showing handmade cakesicles",
+      "link": "Visit Cake on Stick"
+    },
+    "zh-Hant": {
+      "name": "Cake on Stick",
+      "kind": "雙語品牌網站",
+      "status": "已公開網站",
+      "summary": "從瀏覽手作蛋糕棒，到輕鬆洽詢訂製。",
+      "description": "為台灣手作蛋糕棒品牌打造的中英雙語網站，整合商品系列、慶祝活動套組與客製化訂購洽詢。",
+      "scope": [
+        "雙語商品與慶祝活動套組目錄",
+        "為 LINE 與 Instagram 準備訂購訊息",
+        "響應式設計與最佳化商品攝影"
+      ],
+      "alt": "Cake on Stick 英文版首頁，展示手作蛋糕棒",
+      "link": "瀏覽 Cake on Stick"
+    }
+  },
+  {
     "id": "budgetanywhere",
     "url": "https://budgetanywhere.com/",
     "featured": true,

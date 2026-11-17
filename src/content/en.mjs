@@ -24,7 +24,7 @@ export default {
     ],
     "work": [
       "Software, Websites & Publishing Projects",
-      "Explore BudgetAnywhere, La Varieta, multilingual publishing, and a Taipei Archdiocese prototype: selected engineering work by Austin Rohlfing."
+      "Explore Cake on Stick, BudgetAnywhere, business websites, and multilingual publishing: selected engineering work by Austin Rohlfing."
     ],
     "about": [
       "About Austin Rohlfing",
@@ -44,14 +44,7 @@ export default {
     "cta": "Discuss a project",
     "secondary": "See the work",
     "location": "Taiwan-based. International outlook.",
-    "figure": "From business challenge to working solution",
-    "figureLabel": "FROM NEED TO SOLUTION",
-    "figureNote": "",
-    "bottom": [
-      "Software & web",
-      "Data & architecture",
-      "Applied AI"
-    ],
+    "showcaseLabel": "Selected work, out in the world.",
     "credibility": "Founded by a former Fortune 100 engineer."
   },
   "intro": {

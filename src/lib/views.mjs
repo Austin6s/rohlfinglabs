@@ -1,8 +1,16 @@
-import { esc, lines, arrow, label, link, cta, portrait, systemsArt, miniIcon } from './components.mjs';
+import { esc, lines, arrow, label, link, cta, portrait, miniIcon } from './components.mjs';
 import { localizedProjects } from '../content/projects.mjs';
 
 function projectImage(project, c, url, caption = true) {
   return `<figure class="project-screenshot"><img src="${url.asset(`assets/projects/${project.image}`)}" width="${project.width}" height="${project.height}" alt="${esc(project.alt)}" loading="lazy" decoding="async">${caption ? `<figcaption>${esc(project.disclaimer ? c.work.prototypeScreenshot : c.work.screenshot)}</figcaption>` : ''}</figure>`;
+}
+
+function workShowcase(c, url) {
+  const projects = localizedProjects(c.lang);
+  const cake = projects.find(p => p.id === 'cakeonstick');
+  const budget = projects.find(p => p.id === 'budgetanywhere');
+  const preview = (project, className) => `<a class="showcase-card ${className}" href="${url('work')}#${project.id}"><figure><div class="showcase-browser" aria-hidden="true"><span>● ● ●</span><span>${esc(new URL(project.url).hostname)}</span></div><img src="${url.asset(`assets/projects/${project.image}`)}" alt="${esc(project.alt)}" width="${project.width}" height="${project.height}" ${project.id === 'cakeonstick' ? 'fetchpriority="high"' : 'loading="eager"'} decoding="async"><figcaption><span>${esc(project.name)}</span>${arrow(true)}</figcaption></figure></a>`;
+  return `<div class="work-showcase" role="group" aria-label="${esc(c.hero.showcaseLabel)}"><p class="showcase-label">${esc(c.hero.showcaseLabel)}</p>${preview(cake, 'showcase-primary')}${preview(budget, 'showcase-secondary')}</div>`;
 }
 
 function sectionHeading(copy, href) {
@@ -10,7 +18,7 @@ function sectionHeading(copy, href) {
 }
 
 export function home(c, url, config) {
-  return `<section class="hero container"><div class="hero-copy">${label(c.eyebrow)}<h1>${esc(c.hero.first)}<br><em>${esc(c.hero.second)}<br>${esc(c.hero.third)}</em></h1><p class="hero-description">${esc(c.hero.text)}</p><a class="hero-credibility" href="${url('about')}#enterprise-experience">${esc(c.hero.credibility)}${arrow(true)}</a><div class="hero-actions">${link(url('contact'),c.hero.cta,'button button-dark',true)}${link(url('work'),c.hero.secondary,'quiet-link')}</div><p class="location"><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.location)}</p></div><div class="hero-visual">${systemsArt(c)}</div></section>
+  return `<section class="hero container"><div class="hero-copy">${label(c.eyebrow)}<h1>${esc(c.hero.first)}<br><em>${esc(c.hero.second)}<br>${esc(c.hero.third)}</em></h1><p class="hero-description">${esc(c.hero.text)}</p><a class="hero-credibility" href="${url('about')}#enterprise-experience">${esc(c.hero.credibility)}${arrow(true)}</a><div class="hero-actions">${link(url('contact'),c.hero.cta,'button button-dark',true)}${link(url('work'),c.hero.secondary,'quiet-link')}</div><p class="location"><span class="status-dot" aria-hidden="true"></span>${esc(c.hero.location)}</p></div><div class="hero-visual">${workShowcase(c,url)}</div></section>
   <section class="section container concise-services" id="expertise">${sectionHeading(c.intro,url('services'))}<div class="service-grid">${c.services.map(s=>`<a class="service-card" href="${url('services')}#${s.id}"><div class="service-card-top">${miniIcon(s.id)}<span class="index">${s.n} /</span></div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p><div class="service-card-bottom">${arrow(true)}</div></a>`).join('')}</div></section>
   <section class="selected-work-section"><div class="container">${sectionHeading(c.selectedWork,url('work'))}<div class="featured-grid">${localizedProjects(c.lang).filter(p=>p.featured).map(p=>`<article class="featured-project"><a class="project-thumbnail" href="${url('work')}#${p.id}" aria-label="${esc(p.name)}">${projectImage(p,c,url,false)}</a><div class="featured-copy"><p class="project-kind">${esc(p.kind)} <span>· ${esc(p.status)}</span></p><h3><a href="${url('work')}#${p.id}">${esc(p.name)}${arrow(true)}</a></h3><p>${esc(p.summary)}</p></div></article>`).join('')}</div></div></section>
   <section class="founder-section container"><div class="founder-copy">${label(c.founder.label)}<h2>${lines(c.founder.title)}</h2><p class="body-large">${esc(c.founder.text)}</p>${link(url('about'),c.founder.link)}</div>${portrait(c,config.headshot ? url.asset(config.headshot) : null)}</section>${cta(c,url)}`;

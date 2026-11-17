@@ -24,7 +24,7 @@ export default {
     ],
     "work": [
       "軟體產品、網站與內容管理作品",
-      "探索 Austin Rohlfing 的開發作品：BudgetAnywhere、La Varieta、多語系內容管理系統與台北總教區網站原型。"
+      "探索 Austin Rohlfing 的開發作品：Cake on Stick、BudgetAnywhere、企業網站與多語系內容管理系統。"
     ],
     "about": [
       "關於創辦人 Austin Rohlfing",
@@ -44,14 +44,7 @@ export default {
     "cta": "聊聊專案",
     "secondary": "看看作品",
     "location": "立足台灣，連結世界。",
-    "figure": "從業務挑戰到實際可用的解決方案",
-    "figureLabel": "從需求到解決方案",
-    "figureNote": "",
-    "bottom": [
-      "軟體與網站",
-      "資料與架構",
-      "AI 應用"
-    ],
+    "showcaseLabel": "從想法，到正式上線。",
     "credibility": "創辦人曾任美國《財富》百大企業工程師。"
   },
   "intro": {

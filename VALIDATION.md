@@ -1,5 +1,12 @@
 # Website validation
 
+## Real project showcase and Cake on Stick — November 17, 2026
+
+- Replaced the homepage's engineering schematic with linked previews of Cake on Stick and BudgetAnywhere; removed its renderer and localized diagram copy.
+- Added Cake on Stick to both language versions of the portfolio and the four-project homepage grid. Copy was verified against its public English page and source README; the actual public page was captured at 1440 × 1000 in unauthenticated Chromium.
+- `npm test` passes for 11 documents and 372 local links/assets. Chromium checked all 10 routes in both themes at 320, 390, and 1440 pixels (60 combinations), with no horizontal overflow, broken HTML images, or JavaScript errors. Visually inspected desktop light and phone dark layouts.
+- Screenshot provenance is recorded in `public/assets/projects/README.md`. No new dependencies or external runtime requests were added.
+
 ## Concise design adoption — November 17, 2026
 
 - Merged the concise design and the reviewed gold/turquoise palette and logos into `main`, retaining the existing repository history, production hosting configuration, and owner infrastructure rules.
