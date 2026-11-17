@@ -63,6 +63,7 @@ ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonic
 <noscript><style>@media(max-width:1050px){.primary-navigation{display:flex;flex-wrap:wrap;flex-direction:row;gap:15px}.primary-navigation .language-switch{margin:0}.menu-toggle{display:none}}</style></noscript>
 <script type="application/ld+json">${JSON.stringify(json).replaceAll('<','\\u003c')}</script>
 <script src="${url.asset('assets/site.js')}" defer></script>
+${page === 'home' && !is404 ? `<script src="${url.asset('assets/project-reel.js')}" defer></script>` : ''}
 </head><body class="page-${page}"><a class="skip-link" href="#main">${esc(c.skip)}</a>${header(c,page,url)}<main id="main" tabindex="-1">${views[is404?'notFound':page](c,url,config)}</main>${footer(c,url)}</body></html>`;
   }
   for (const locale of Object.keys(locales)) {

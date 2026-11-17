@@ -44,7 +44,17 @@ export default {
     "cta": "Discuss a project",
     "secondary": "See the work",
     "location": "Taiwan-based. International outlook.",
-    "showcaseLabel": "Selected work, out in the world.",
+    "slideshow": {
+      "label": "Selected work",
+      "carousel": "carousel",
+      "slide": "slide",
+      "view": "View project",
+      "previous": "Previous project",
+      "next": "Next project",
+      "play": "Play slideshow",
+      "pause": "Pause slideshow",
+      "choose": "Choose a project"
+    },
     "credibility": "Founded by a former Fortune 100 engineer."
   },
   "intro": {

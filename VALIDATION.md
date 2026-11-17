@@ -1,5 +1,14 @@
 # Website validation
 
+## Research-led homepage slideshow — November 17, 2026
+
+- Reviewed Metalab, Instrument, and AREA 17 in Chromium; design references and adaptation notes are in `docs/hero-slideshow.md`.
+- Replaced the overlapping preview cards with one featured project at a time, a reserved caption area, counter, project selectors, previous/next, and pause/play controls. All four published portfolio projects are included from the shared content source.
+- `npm test` passes for 11 documents and 390 local links/assets. No package dependencies or external runtime requests were added; the slideshow enhancement is loaded only on the two localized homepages.
+- Chromium checked 80 slide/language/theme/width combinations (4 slides, 2 languages, 2 themes, 320/390/768/1024/1440 pixels): no horizontal overflow, broken active-slide images, or caption-related layout shifts. Desktop and phone screenshots were visually reviewed.
+- axe-core detected no violations in the slideshow under WCAG 2 A/AA, WCAG 2.1 AA, and best-practice tags at 390 and 1440 pixels in both languages and themes.
+- Verified timed rotation, hover pause/resume, focus stop, explicit play/pause, direct selection, keyboard navigation, forward/reverse wraparound, initial and dynamically enabled reduced motion, and the linked static first-slide fallback without JavaScript.
+
 ## Real project showcase and Cake on Stick — November 17, 2026
 
 - Replaced the homepage's engineering schematic with linked previews of Cake on Stick and BudgetAnywhere; removed its renderer and localized diagram copy.

@@ -44,7 +44,17 @@ export default {
     "cta": "聊聊專案",
     "secondary": "看看作品",
     "location": "立足台灣，連結世界。",
-    "showcaseLabel": "從想法，到正式上線。",
+    "slideshow": {
+      "label": "精選作品",
+      "carousel": "輪播",
+      "slide": "投影片",
+      "view": "查看作品",
+      "previous": "上一個作品",
+      "next": "下一個作品",
+      "play": "播放作品輪播",
+      "pause": "暫停作品輪播",
+      "choose": "選擇作品"
+    },
     "credibility": "創辦人曾任美國《財富》百大企業工程師。"
   },
   "intro": {

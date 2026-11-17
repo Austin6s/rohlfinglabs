@@ -6,11 +6,20 @@ function projectImage(project, c, url, caption = true) {
 }
 
 function workShowcase(c, url) {
-  const projects = localizedProjects(c.lang);
-  const cake = projects.find(p => p.id === 'cakeonstick');
-  const budget = projects.find(p => p.id === 'budgetanywhere');
-  const preview = (project, className) => `<a class="showcase-card ${className}" href="${url('work')}#${project.id}"><figure><div class="showcase-browser" aria-hidden="true"><span>● ● ●</span><span>${esc(new URL(project.url).hostname)}</span></div><img src="${url.asset(`assets/projects/${project.image}`)}" alt="${esc(project.alt)}" width="${project.width}" height="${project.height}" ${project.id === 'cakeonstick' ? 'fetchpriority="high"' : 'loading="eager"'} decoding="async"><figcaption><span>${esc(project.name)}</span>${arrow(true)}</figcaption></figure></a>`;
-  return `<div class="work-showcase" role="group" aria-label="${esc(c.hero.showcaseLabel)}"><p class="showcase-label">${esc(c.hero.showcaseLabel)}</p>${preview(cake, 'showcase-primary')}${preview(budget, 'showcase-secondary')}</div>`;
+  const projects = localizedProjects(c.lang).filter(p => p.featured);
+  const copy = c.hero.slideshow;
+  return `<section class="project-reel" aria-label="${esc(copy.label)}" aria-roledescription="${esc(copy.carousel)}" data-project-reel>
+    <div class="reel-heading"><p>${esc(copy.label)}</p><div class="reel-controls" hidden>
+      <button type="button" data-reel-play data-play-label="${esc(copy.play)}" data-pause-label="${esc(copy.pause)}" aria-label="${esc(copy.pause)}"><span aria-hidden="true">Ⅱ</span></button>
+      <button type="button" data-reel-prev aria-label="${esc(copy.previous)}">${arrow()}</button>
+      <button type="button" data-reel-next aria-label="${esc(copy.next)}">${arrow()}</button>
+    </div></div>
+    <div class="reel-slides" aria-live="off" aria-atomic="false">${projects.map((p,i)=>`<div class="reel-slide" role="group" aria-roledescription="${esc(copy.slide)}" aria-label="${i+1} / ${projects.length}"${i ? ' hidden' : ''}>
+      <a class="reel-image" href="${url('work')}#${p.id}" aria-label="${esc(`${copy.view}: ${p.name}`)}"><img src="${url.asset(`assets/projects/${p.image}`)}" width="${p.width}" height="${p.height}" alt="${esc(p.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} decoding="async"></a>
+      <div class="reel-caption"><p class="reel-kind">${esc(p.kind)}</p><h2><a href="${url('work')}#${p.id}">${esc(p.name)}${arrow(true)}</a></h2><p class="reel-summary">${esc(p.summary)}</p></div>
+    </div>`).join('')}</div>
+    <div class="reel-navigation" hidden><span class="reel-counter" aria-hidden="true"><span data-reel-current>01</span> / ${String(projects.length).padStart(2,'0')}</span><div class="reel-selectors" role="group" aria-label="${esc(copy.choose)}">${projects.map((p,i)=>`<button type="button" data-reel-select="${i}" aria-label="${esc(`${copy.view}: ${p.name}`)}"${i ? '' : ' aria-current="true"'}><span aria-hidden="true"></span></button>`).join('')}</div></div>
+  </section>`;
 }
 
 function sectionHeading(copy, href) {
