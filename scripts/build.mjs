@@ -1,4 +1,5 @@
-import { mkdir, rm, cp, writeFile } from 'node:fs/promises';
+import { mkdir, rm, cp, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import config from '../site.config.mjs';
@@ -22,6 +23,12 @@ export async function build() {
   await mkdir(output, { recursive: true });
   await cp(path.join(root, 'public'), output, { recursive: true });
   const absolute = (page, locale) => new URL(route(page, locale), site).href;
+  const versioned = ['site.css', 'theme.js', 'site.js', 'project-reel.js'];
+  const assetVersions = new Map(await Promise.all(versioned.map(async file => {
+    const asset = `assets/${file}`;
+    const data = await readFile(path.join(output, asset));
+    return [asset, createHash('sha256').update(data).digest('hex').slice(0, 12)];
+  })));
 
   function render(page, locale, is404 = false) {
     const c = locales[locale];
@@ -29,7 +36,7 @@ export async function build() {
     const depth = currentRoute.split('/').filter(Boolean).length;
     const prefix = depth ? '../'.repeat(depth) : './';
     const url = (target, targetLocale = locale) => prefix + route(target, targetLocale);
-    url.asset = asset => prefix + asset;
+    url.asset = asset => prefix + asset + (assetVersions.has(asset) ? `?v=${assetVersions.get(asset)}` : '');
     const [title, description] = is404 ? ['Page not found', 'This page could not be found.'] : c.meta[page];
     const fullTitle = `${title} | Rohlfing Labs`;
     const canonical = is404 ? new URL('404.html', site).href : absolute(page, locale);
@@ -50,7 +57,7 @@ export async function build() {
     return `<!doctype html>
 <html lang="${c.lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f7faf9">
+<meta name="color-scheme" content="light dark"><meta name="theme-color" content="#faf8f2">
 <script src="${url.asset('assets/theme.js')}"></script>
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonical" href="${esc(canonical)}">${Object.entries(locales).map(([key,value])=>`<link rel="alternate" hreflang="${value.lang}" href="${esc(absolute(page,key))}">`).join('')}<link rel="alternate" hreflang="x-default" href="${esc(absolute(page,'en'))}">`}
@@ -60,11 +67,10 @@ ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonic
 <link rel="icon" href="${url.asset('assets/favicon.svg')}" type="image/svg+xml">
 <link rel="preload" href="${url.asset('assets/manrope-latin.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${url.asset('assets/site.css')}">
-<noscript><style>@media(max-width:1050px){.primary-navigation{display:flex;flex-wrap:wrap;flex-direction:row;gap:15px}.primary-navigation .language-switch{margin:0}.menu-toggle{display:none}}</style></noscript>
 <script type="application/ld+json">${JSON.stringify(json).replaceAll('<','\\u003c')}</script>
 <script src="${url.asset('assets/site.js')}" defer></script>
 ${page === 'home' && !is404 ? `<script src="${url.asset('assets/project-reel.js')}" defer></script>` : ''}
-</head><body class="page-${page}"><a class="skip-link" href="#main">${esc(c.skip)}</a>${header(c,page,url)}<main id="main" tabindex="-1">${views[is404?'notFound':page](c,url,config)}</main>${footer(c,url)}</body></html>`;
+</head><body id="top" class="page-${is404 ? 'not-found' : page}"><a class="skip-link" href="#main">${esc(c.skip)}</a>${header(c,is404 ? null : page,url)}<main id="main" tabindex="-1">${views[is404?'notFound':page](c,url,config)}</main>${footer(c,url)}</body></html>`;
   }
   for (const locale of Object.keys(locales)) {
     for (const page of pages) {

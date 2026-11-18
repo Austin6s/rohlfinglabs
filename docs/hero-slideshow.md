@@ -12,11 +12,11 @@ The resulting design is an adaptation for this small engineering practice, not a
 
 ## Behavior
 
-Four published projects rotate every 6.5 seconds with a short fade. Captions reserve space so slide changes do not move surrounding content. Previous/next buttons, four project selectors, a counter, and pause/play remain visible outside the image. Links go to the matching localized portfolio entry. Only the homepage loads the small, dependency-free `project-reel.js` enhancement.
+Four published projects rotate every 6.5 seconds with a short fade. The image and caption share one link to the matching localized portfolio entry. Previous/next buttons, four project selectors, and pause/play remain visible outside the image. The homepage loads `project-reel.js` to enable the controls and rotation.
 
 Following the [W3C carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) and [animation guidance](https://www.w3.org/WAI/tutorials/carousels/animations/):
 
-- Keyboard focus stops rotation until the visitor explicitly restarts it. Arrow keys and native button activation navigate projects.
+- Keyboard focus stops rotation until the visitor explicitly restarts it. Arrow keys navigate while a slideshow button has focus. The project link retains focus when a visitor presses an arrow key on the link.
 - Hover temporarily pauses rotation; explicit play is supported while interacting with the controls.
 - Offscreen and background-tab timers stop. Reduced motion disables initial autoplay and the fade, and enabling reduced motion stops playback.
 - Automatic changes are not announced as live updates; manual browsing uses a polite live region. Hidden slides and links are removed from navigation.

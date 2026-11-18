@@ -6,6 +6,7 @@ if (reel) {
   const play = reel.querySelector('[data-reel-play]');
   const region = reel.querySelector('.reel-slides');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const visibilityThreshold = 0.3;
   let current = 0;
   let playing = !motion.matches;
   let hovering = false;
@@ -17,19 +18,20 @@ if (reel) {
   function schedule() {
     clearTimeout(timer);
     if (playing && visible && !document.hidden && (!hovering || explicitlyStarted)) {
+      slides[(current + 1) % slides.length].querySelector('img').loading = 'eager';
       timer = setTimeout(() => show(current + 1), 6500);
     }
   }
   function show(index) {
-    current = (index + slides.length) % slides.length;
-    slides.forEach((slide, i) => { slide.hidden = i !== current; });
-    selectors.forEach((button, i) => {
-      if (i === current) button.setAttribute('aria-current', 'true');
-      else button.removeAttribute('aria-current');
-    });
-    reel.querySelector('[data-reel-current]').textContent = String(current + 1).padStart(2, '0');
-    // Warm the next image before its turn, including slides initially hidden.
-    slides[(current + 1) % slides.length].querySelector('img').loading = 'eager';
+    const next = (index + slides.length) % slides.length;
+    if (next === current) return;
+    slides[current].hidden = true;
+    selectors[current].removeAttribute('aria-current');
+    current = next;
+    region.classList.add('has-changed');
+    slides[current].querySelector('img').loading = 'eager';
+    slides[current].hidden = false;
+    selectors[current].setAttribute('aria-current', 'true');
     schedule();
   }
   function setPlaying(value) {
@@ -45,7 +47,7 @@ if (reel) {
     show(index);
   }
 
-  reel.querySelectorAll('.reel-controls, .reel-navigation').forEach(el => { el.hidden = false; });
+  reel.querySelectorAll('.reel-controls, .reel-selectors').forEach(el => { el.hidden = false; });
   reel.querySelector('[data-reel-prev]').addEventListener('click', () => manual(current - 1));
   reel.querySelector('[data-reel-next]').addEventListener('click', () => manual(current + 1));
   selectors.forEach((button, i) => button.addEventListener('click', () => manual(i)));
@@ -60,19 +62,24 @@ if (reel) {
   reel.addEventListener('mouseenter', () => { hovering = true; schedule(); });
   reel.addEventListener('mouseleave', () => { hovering = false; explicitlyStarted = false; schedule(); });
   reel.addEventListener('keydown', event => {
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault();
-      manual(current + (event.key === 'ArrowRight' ? 1 : -1));
-    }
+    if (!event.target.closest('button') || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    manual(current + (event.key === 'ArrowRight' ? 1 : -1));
+    if (event.target.matches('[data-reel-select]')) selectors[current].focus();
   });
   document.addEventListener('visibilitychange', schedule);
-  motion.addEventListener('change', () => { if (motion.matches) setPlaying(false); });
+  motion.addEventListener('change', () => {
+    if (motion.matches) {
+      explicitlyStarted = false;
+      setPlaying(false);
+    }
+  });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {
-      visible = entries[0].isIntersecting;
+      visible = entries[0].intersectionRatio >= visibilityThreshold;
       schedule();
-    }, {threshold: 0.3}).observe(reel);
+    }, {threshold: visibilityThreshold}).observe(reel);
   }
   setPlaying(playing);
-  show(0);
 }

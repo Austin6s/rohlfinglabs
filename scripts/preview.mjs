@@ -15,7 +15,7 @@ async function build() {
 await build();
 const base = new URL(process.env.SITE_URL || 'https://rohlfinglabs.com/').pathname.replace(/\/?$/, '/');
 const port = Number(process.env.PORT || 4321);
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
 const server = http.createServer(async(req,res)=>{
   try {
     const requested = decodeURIComponent(new URL(req.url,'http://localhost').pathname);

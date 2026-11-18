@@ -12,7 +12,6 @@ export default {
   "skip": "Skip to content",
   "menu": "Menu",
   "menuClose": "Close menu",
-  "languageLabel": "Choose language",
   "meta": {
     "home": [
       "Software, Data & AI Engineering",
@@ -38,17 +37,16 @@ export default {
   "eyebrow": "Founder-led software, data & AI engineering",
   "hero": {
     "first": "Complex problems.",
-    "second": "Thoughtful",
-    "third": "technology.",
-    "text": "Websites, custom software, data platforms, and practical AI. Built around your business.",
+    "emphasis": "Thoughtful technology.",
+    "text": "Websites, custom software, data platforms, and practical AI for your business.",
     "cta": "Discuss a project",
     "secondary": "See the work",
     "location": "Taiwan-based. International outlook.",
     "slideshow": {
-      "label": "Selected work",
+      "label": "Featured projects",
       "carousel": "carousel",
       "slide": "slide",
-      "view": "View project",
+      "view": "View",
       "previous": "Previous project",
       "next": "Next project",
       "play": "Play slideshow",
@@ -58,14 +56,12 @@ export default {
     "credibility": "Founded by a former Fortune 100 engineer."
   },
   "intro": {
-    "label": "01 / SERVICES",
-    "title": "What we build.",
+    "title": "What we build",
     "link": "Explore services"
   },
   "services": [
     {
       "id": "software",
-      "n": "01",
       "name": "Software & Web",
       "text": "Websites and applications that make your business easier to run.",
       "tags": [
@@ -92,7 +88,6 @@ export default {
     },
     {
       "id": "data",
-      "n": "02",
       "name": "Data & Architecture",
       "text": "Connected systems and reliable data for reporting and operations.",
       "tags": [
@@ -119,7 +114,6 @@ export default {
     },
     {
       "id": "ai",
-      "n": "03",
       "name": "Applied AI",
       "text": "Document search, assisted translation, and useful workflow automation.",
       "tags": [
@@ -151,12 +145,11 @@ export default {
     "intro": "Software, data, and AI. Start with the problem you want to solve."
   },
   "selectedWork": {
-    "label": "02 / WORK",
-    "title": "Built to be useful.",
+    "title": "Selected projects",
     "link": "All projects"
   },
   "founder": {
-    "label": "03 / THE PERSON BEHIND THE WORK",
+    "label": "Founder",
     "title": "Engineering depth.\nPersonal attention.",
     "text": "Work directly with Austin Rohlfing, an American engineer in Taiwan with Fortune 100 experience. Clear scope, regular progress, and a practical handover.",
     "link": "Meet Austin",
@@ -176,7 +169,7 @@ export default {
       "At Nationwide Mutual Insurance, I was a Senior Software Engineer and Lead ETL Developer. At Veterinary Practice Partners, my work included Databricks platform architecture, governance, and event-driven systems.",
       "Today, that experience informs every website, application, and data project I build. You work directly with me, from the first conversation through delivery."
     ],
-    "background": "A foundation in real systems.",
+    "background": "Engineering background",
     "skills": [
       "Microsoft Azure & Databricks",
       "PostgreSQL, SQL & Python",
@@ -192,24 +185,24 @@ export default {
     }
   },
   "work": {
-    "label": "WORK & EXPLORATIONS",
-    "title": "A few things\nI’ve built.",
-    "intro": "Products, websites, and prototypes by Austin, including work before Rohlfing Labs. Each project’s status is shown.",
-    "scope": "What I built",
-    "stack": "Engineering",
-    "screenshot": "Actual public-site screenshot",
-    "prototypeScreenshot": "Actual prototype screenshot"
+    "title": "Selected projects",
+    "intro": "Products, websites, and prototypes by Austin Rohlfing, including work before Rohlfing Labs.",
+    "index": "Jump to a project",
+    "stack": "Technologies",
+    "prototypeScreenshot": "Screenshot of the prototype"
   },
   "contact": {
-    "label": "START A CONVERSATION",
     "title": "Let’s talk.",
     "intro": "Tell me what you want to build or improve. We’ll find a sensible starting point.",
-    "emailLabel": "EMAIL AUSTIN",
+    "emailLabel": "Email Austin",
     "missingTitle": "Contact details coming soon.",
     "missingText": "This website is being prepared for launch. A direct email address will be published here once it is ready.",
-    "emailAction": "Start an email",
+    "emailAction": "Open email app",
+    "copy": "Copy address",
+    "copied": "Email address copied.",
+    "copyError": "Select the email address to copy it.",
     "emailSubject": "A project for Rohlfing Labs",
-    "emailBody": "Hi Austin,\n\nHere’s what we’re working on:\n\nThe problem we’d like to solve:\n\nOur rough timing:\n\n",
+    "emailBody": "Hi Austin,\n\nHere’s what we’re working on:\n\nThe problem we’d like to solve:\n\nOur rough timing and budget:\n\nAny existing tools or constraints:\n\n",
     "prompt": "A few useful details",
     "prompts": [
       "Your business and the problem",
@@ -220,8 +213,7 @@ export default {
     "after": "We can start by understanding your goals, discussing whether there’s a good fit, and deciding what a sensible first scope would look like.",
     "locationTitle": "Based in Taiwan.",
     "locationText": "Working with businesses in Taiwan and internationally.",
-    "languages": "Website available in English & Traditional Chinese.",
-    "privacy": "Email opens in your own mail app."
+    "languages": "Website available in English & Traditional Chinese."
   },
   "cta": {
     "title": "Have a project in mind?",

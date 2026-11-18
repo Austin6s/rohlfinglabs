@@ -10,5 +10,5 @@
     : preference;
   document.documentElement.dataset.themePreference = preference;
   document.documentElement.dataset.theme = theme;
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0f1c21' : '#f7faf9';
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0f1c21' : '#faf8f2';
 })();

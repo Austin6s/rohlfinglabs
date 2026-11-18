@@ -1,9 +1,8 @@
 export const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const lines = text => esc(text).replaceAll('\n', '<br>');
 export const arrow = (diagonal = false) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="${diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h15m-6-6 6 6-6 6'}"/></svg>`;
-// Crop the supplied artwork's transparent margins through the SVG viewport.
-// In dark mode, lift only its charcoal pixels so the original gold stays gold.
-export const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="71 193 2025 338" width="2025" height="338" role="img" aria-labelledby="gold-brand-title-${placement}">
+// Use the cropped wordmark and lighten its charcoal lettering in dark mode.
+export const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="0 0 810 135" width="810" height="135" role="img" aria-labelledby="gold-brand-title-${placement}">
   <title id="gold-brand-title-${placement}">Rohlfing Labs</title>
   <defs><filter id="gold-brand-night-${placement}" color-interpolation-filters="sRGB">
     <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.126 -7.152 -0.722 0 3" result="charcoal"/>
@@ -12,27 +11,32 @@ export const brand = (url, placement = 'header') => `<svg class="brand-logotype"
     <feComposite in="light" in2="mask" operator="in" result="light-text"/>
     <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="light-text"/></feMerge>
   </filter></defs>
-  <image class="gold-brand-day" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724"/>
-  <image class="gold-brand-night" href="${url.asset('assets/rohlfing-labs-logo-gold.png')}" width="2172" height="724" filter="url(#gold-brand-night-${placement})"/>
+  <image class="gold-brand-day" href="${url.asset('assets/rohlfing-labs-wordmark.webp')}" width="810" height="135"/>
+  <image class="gold-brand-night" href="${url.asset('assets/rohlfing-labs-wordmark.webp')}" width="810" height="135" filter="url(#gold-brand-night-${placement})"/>
 </svg>`;
 export const link = (href, text, className = 'text-link', diagonal = false) => `<a class="${className}" href="${esc(href)}">${esc(text)}${arrow(diagonal)}</a>`;
 export const label = text => `<p class="eyebrow">${esc(text)}</p>`;
 export function header(c, page, url) {
-  return `<header class="site-header" id="top"><div class="container header-inner">
-    <a class="brand" href="${url('home')}" aria-label="Rohlfing Labs — ${esc(c.nav.home)}">${brand(url)}</a>
-    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-open-label="${esc(c.menu)}" data-close-label="${esc(c.menuClose)}"><span>${esc(c.menu)}</span><i aria-hidden="true"></i></button>
+  const alternate = c.lang === 'en' ? { key: 'zh-tw', lang: 'zh-Hant', name: '繁體中文' } : { key: 'en', lang: 'en', name: 'English' };
+  const current = target => page === target ? ' aria-current="page"' : '';
+  return `<header class="site-header"><div class="container header-inner">
+    <a class="brand" href="${url('home')}" aria-label="Rohlfing Labs — ${esc(c.nav.home)}"${current('home')}>${brand(url)}</a>
+    <a class="language-switch" lang="${alternate.lang}" hreflang="${alternate.lang}" href="${url(page || 'home', alternate.key)}">${alternate.name}</a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-open-label="${esc(c.menu)}" data-close-label="${esc(c.menuClose)}" hidden><span class="visually-hidden">${esc(c.menu)}</span><i aria-hidden="true"></i></button>
     <nav id="primary-navigation" class="primary-navigation" aria-label="${c.lang === 'en' ? 'Main navigation' : '主要導覽'}">
-      ${['services','work','about'].map(p => `<a href="${url(p)}"${p === page ? ' aria-current="page"' : ''}>${esc(c.nav[p])}</a>`).join('')}
-      <div class="language-switch" role="group" aria-label="${esc(c.languageLabel)}"><a lang="en" hreflang="en" href="${url(page, 'en')}"${c.lang === 'en' ? ' aria-current="true"' : ''}>EN</a><span aria-hidden="true">/</span><a lang="zh-Hant" hreflang="zh-Hant" href="${url(page, 'zh-tw')}"${c.lang !== 'en' ? ' aria-current="true"' : ''}>繁中</a></div>
+      ${['services','work','about'].map(p => `<a href="${url(p)}"${current(p)}>${esc(c.nav[p])}</a>`).join('')}
       <button class="theme-toggle" type="button" aria-pressed="false" data-light-label="${c.lang === 'en' ? 'Switch to light mode' : '切換淺色模式'}" data-dark-label="${c.lang === 'en' ? 'Switch to dark mode' : '切換深色模式'}" hidden><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.7 8.7 0 0 1 11 3.5 8.8 8.8 0 1 0 20.5 13Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span>${c.lang === 'en' ? 'Dark mode' : '深色模式'}</span></button>
-      ${link(url('contact'), c.nav.contact, 'nav-cta')}
+      <a class="nav-cta" href="${url('contact')}"${current('contact')}>${esc(c.nav.contact)}${arrow()}</a>
     </nav></div></header>`;
 }
 export function footer(c, url) {
-  return `<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="${url('home')}">${brand(url, 'footer')}</a><p>${esc(c.footer.tagline)}</p></div><div class="footer-nav">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
+  return `<footer class="site-footer"><div class="container"><div class="footer-top">
+    <div><a class="brand" href="${url('home')}">${brand(url, 'footer')}</a><p>${esc(c.footer.tagline)}</p></div>
+    <nav class="footer-nav" aria-label="${c.lang === 'en' ? 'Footer navigation' : '頁尾導覽'}">${['services','work','about','contact'].map(p => `<a href="${url(p)}">${esc(c.nav[p])}</a>`).join('')}</nav>
+  </div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${esc(c.footer.copyright)}</span><span>${esc(c.footer.location)}</span><a href="#top">${esc(c.footer.back)} ↑</a></div></div></footer>`;
 }
 export function cta(c, url) {
-  return `<section class="cta-section"><div class="container cta-inner"><div>${c.cta.label ? label(c.cta.label) : ''}<h2>${lines(c.cta.title)}</h2></div>${link(url('contact'), c.cta.link, 'button button-light', true)}</div></section>`;
+  return `<section class="cta-section"><div class="container cta-inner"><h2>${lines(c.cta.title)}</h2>${link(url('contact'), c.cta.link, 'button button-light')}</div></section>`;
 }
 export function portrait(c, asset) {
   return `<figure class="portrait">${asset ? `<img src="${esc(asset)}" alt="Austin Rohlfing" width="707" height="942" loading="lazy" decoding="async">` : `<div class="portrait-placeholder" role="img" aria-label="${esc(c.founder.photo)}"><div class="portrait-lines" aria-hidden="true"></div><span class="portrait-mono" aria-hidden="true">${esc(c.founder.monogram)}<span>↗</span></span><span class="portrait-note">${esc(c.founder.photoNote)}</span></div>`}<figcaption><strong>Austin Rohlfing</strong><span>${esc(c.founder.role)}</span></figcaption></figure>`;

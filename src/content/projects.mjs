@@ -166,7 +166,6 @@ export const projects = [
   },
   {
     "id": "taipei-prototype",
-    "url": "https://taipeicatholic.org/en",
     "featured": false,
     "image": "taipei-prototype.jpg",
     "width": 1440,
@@ -179,7 +178,7 @@ export const projects = [
     "en": {
       "name": "Taipei Archdiocese prototype",
       "kind": "Website & publishing prototype",
-      "status": "Public prototype",
+      "status": "Restricted prototype",
       "summary": "A bilingual publishing system prototype.",
       "description": "A website and CMS prototype exploring structured news, events, directories, and multilingual editorial workflows.",
       "scope": [
@@ -187,14 +186,13 @@ export const projects = [
         "Editorial roles and publishing",
         "AI-assisted translation with review"
       ],
-      "disclaimer": "Public prototype; not an official deployment, endorsement, or completed paid Archdiocese engagement.",
-      "alt": "English homepage of the Taipei Archdiocese website prototype",
-      "link": "View the public prototype"
+      "disclaimer": "Independent prototype shown for demonstration. Access to the live preview is restricted.",
+      "alt": "English homepage of the Taipei Archdiocese website prototype"
     },
     "zh-Hant": {
       "name": "台北總教區網站原型",
       "kind": "網站與內容發布系統原型",
-      "status": "公開展示原型",
+      "status": "原型・限授權存取",
       "summary": "雙語內容發布系統原型。",
       "description": "探索如何以網站與 CMS 管理新聞、活動、名錄及多語系編輯流程。",
       "scope": [
@@ -202,9 +200,8 @@ export const projects = [
         "編輯權限與發布流程",
         "AI 輔助翻譯與人工審閱"
       ],
-      "disclaimer": "公開展示原型；非總教區正式採用、背書或已完成的付費委託案。",
-      "alt": "台北總教區網站原型的英文版首頁",
-      "link": "瀏覽公開原型"
+      "disclaimer": "獨立開發的原型，僅供作品展示。線上預覽限授權存取。",
+      "alt": "台北總教區網站原型的英文版首頁"
     }
   }
 ];

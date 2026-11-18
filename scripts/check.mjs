@@ -42,8 +42,12 @@ for (const [file, html] of docs) {
     assert.ok(html.includes('hreflang="x-default"'),`${file}: default alternate`);
   } else assert.match(html,/<meta name="robots" content="noindex, follow">/);
 
-  for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
-    const href = decode(match[1]);
+  const urls = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)].map(([, url]) => url);
+  for (const [, srcset] of html.matchAll(/\bsrcset="([^"]+)"/g)) {
+    urls.push(...srcset.split(',').map(candidate => candidate.trim().split(/\s+/)[0]));
+  }
+  for (const url of urls) {
+    const href = decode(url);
     if (/^(mailto:|tel:|data:)/.test(href)) continue;
     const resolved = new URL(href,pageUrl);
     if (resolved.origin !== base.origin) continue;

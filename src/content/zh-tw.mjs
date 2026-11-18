@@ -12,7 +12,6 @@ export default {
   "skip": "跳至主要內容",
   "menu": "選單",
   "menuClose": "關閉選單",
-  "languageLabel": "選擇語言",
   "meta": {
     "home": [
       "軟體、資料與 AI 工程",
@@ -38,17 +37,16 @@ export default {
   "eyebrow": "由創辦人親自參與的軟體、資料與 AI 工程",
   "hero": {
     "first": "複雜的問題，",
-    "second": "用深思熟慮的",
-    "third": "技術解決。",
+    "emphasis": "用深思熟慮的\n技術解決。",
     "text": "網站、客製化軟體、資料平台與實用 AI，從您的業務需求出發。",
     "cta": "聊聊專案",
     "secondary": "看看作品",
     "location": "立足台灣，連結世界。",
     "slideshow": {
-      "label": "精選作品",
+      "label": "代表作品",
       "carousel": "輪播",
       "slide": "投影片",
-      "view": "查看作品",
+      "view": "查看",
       "previous": "上一個作品",
       "next": "下一個作品",
       "play": "播放作品輪播",
@@ -58,14 +56,12 @@ export default {
     "credibility": "創辦人曾任美國《財富》百大企業工程師。"
   },
   "intro": {
-    "label": "01 / 服務",
     "title": "我們能打造什麼",
     "link": "了解服務"
   },
   "services": [
     {
       "id": "software",
-      "n": "01",
       "name": "軟體與網站開發",
       "text": "打造網站與應用程式，讓客戶更容易找到您，讓團隊工作更順暢。",
       "tags": [
@@ -92,7 +88,6 @@ export default {
     },
     {
       "id": "data",
-      "n": "02",
       "name": "資料工程與架構",
       "text": "串接系統、整理資料，為報表與營運建立可靠的基礎。",
       "tags": [
@@ -119,7 +114,6 @@ export default {
     },
     {
       "id": "ai",
-      "n": "03",
       "name": "AI 應用與智慧系統",
       "text": "文件搜尋、輔助翻譯與流程自動化，讓 AI 解決具體問題。",
       "tags": [
@@ -151,12 +145,11 @@ export default {
     "intro": "結合軟體、資料與 AI 專業，從您想解決的問題開始。"
   },
   "selectedWork": {
-    "label": "02 / 作品",
-    "title": "為實際需求而打造",
+    "title": "精選作品",
     "link": "所有作品"
   },
   "founder": {
-    "label": "03 / 工程背後的人",
+    "label": "創辦人",
     "title": "扎實的工程背景，\n直接而真誠的合作。",
     "text": "直接與創辦人 Austin Rohlfing 合作。一位具有美國百大企業經驗、旅居台灣的工程師，重視清楚的範圍、進度與交接。",
     "link": "認識 Austin",
@@ -176,7 +169,7 @@ export default {
       "我曾在 Nationwide Mutual Insurance 擔任資深軟體工程師與 ETL 開發負責人。在 Veterinary Practice Partners，工作涵蓋 Databricks 平台架構、資料治理與事件驅動系統。",
       "這些經驗，是我開發網站、應用程式與資料系統的基礎。從初步討論到交付，您都直接與我合作。"
     ],
-    "background": "從真實系統累積的專業。",
+    "background": "工程專長",
     "skills": [
       "Microsoft Azure 與 Databricks",
       "PostgreSQL、SQL 與 Python",
@@ -192,24 +185,24 @@ export default {
     }
   },
   "work": {
-    "label": "作品與技術探索",
-    "title": "一些實際\n打造的作品。",
-    "intro": "收錄 Austin 的產品、網站與原型，包含 Rohlfing Labs 成立前的作品，並清楚標示狀態。",
-    "scope": "開發內容",
+    "title": "精選作品",
+    "intro": "收錄 Austin Rohlfing 開發的產品、網站與原型，包含 Rohlfing Labs 成立前的作品。",
+    "index": "選擇要查看的作品",
     "stack": "使用技術",
-    "screenshot": "公開網站實際截圖",
-    "prototypeScreenshot": "原型網站實際截圖"
+    "prototypeScreenshot": "原型網站截圖"
   },
   "contact": {
-    "label": "洽談合作",
     "title": "聊聊您的想法。",
     "intro": "告訴我您想打造或改善什麼，一起找到合適的起點。",
-    "emailLabel": "透過 EMAIL 聯絡 AUSTIN",
+    "emailLabel": "寄信給 Austin",
     "missingTitle": "聯絡方式即將公布。",
     "missingText": "網站目前正在準備上線。確認聯絡信箱後，會在此提供可直接聯繫的電子郵件地址。",
-    "emailAction": "寄信聊聊",
+    "emailAction": "開啟郵件程式",
+    "copy": "複製信箱",
+    "copied": "已複製電子郵件地址。",
+    "copyError": "請選取電子郵件地址後複製。",
     "emailSubject": "Rohlfing Labs 專案洽詢",
-    "emailBody": "Austin 您好，\n\n我們的組織與業務：\n\n希望解決的問題：\n\n預計時程：\n\n",
+    "emailBody": "Austin 您好，\n\n我們的組織與業務：\n\n希望解決的問題：\n\n預計時程與大致預算：\n\n現有工具或已知限制：\n\n",
     "prompt": "可以先聊這些",
     "prompts": [
       "您的業務與需求",
@@ -220,8 +213,7 @@ export default {
     "after": "我們可以先了解目標，討論是否適合合作，再一起確認合理的第一階段範圍。",
     "locationTitle": "立足台灣。",
     "locationText": "與台灣及海外企業合作。",
-    "languages": "網站提供英文與繁體中文版本。",
-    "privacy": "連結將開啟您的郵件應用程式。"
+    "languages": "網站提供英文與繁體中文版本。"
   },
   "cta": {
     "title": "有專案想聊聊？",

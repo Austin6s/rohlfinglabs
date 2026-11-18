@@ -8,11 +8,13 @@ Original four images captured November 3, 2026, from public pages in a fresh, un
 | `budgetanywhere.jpg` | https://budgetanywhere.com/ | Public landing page with sample household data; captured November 17, 2026 |
 | `lavarieta.jpg` | https://lavarietasourcing.com/ | Published business website |
 | `john-bosco.jpg` | https://johnboscotaipei.org/en | Published parish website, English version |
-| `taipei-prototype.jpg` | https://taipeicatholic.org/en | Public prototype, English version; not represented as an official or completed paid engagement |
+| `taipei-prototype.jpg` | https://taipeicatholic.org/en | English-language prototype captured while public. The live preview now requires sign-in, so the portfolio shows the screenshot and scope. |
 
 Project descriptions were checked against these public pages and the corresponding repositories' README and deployment configurations. The BudgetAnywhere entry describes its application's documented capabilities; its landing page shows a publicly available sample household, not a private dashboard. A future dashboard capture should use explicitly shareable demonstration data.
 
 When refreshing an image, preserve its dimensions or update `src/content/projects.mjs`. Capture the actual page; do not generate a substitute UI. Verify that no personal account information is visible.
+
+Each JPEG has matching WebP exports at 1440 × 1000 (`name.webp`) and 720 × 500 (`name-720.webp`). Re-export both when refreshing a screenshot. The JPEG remains the HTML fallback.
 
 Cake on Stick was captured on November 17, 2026, with the same dimensions and JPEG quality, in a fresh English-language Chromium session. Its public product catalog, party packages, bilingual routes, and LINE/Instagram inquiry flow were checked against the live page and local repository. The screenshot is also used in the homepage project showcase.
 
