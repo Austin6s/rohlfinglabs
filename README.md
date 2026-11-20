@@ -67,6 +67,7 @@ src/content/zh-tw.mjs    Traditional Chinese content
 src/lib/components.mjs  Navigation, footer, icons, and shared components
 src/lib/views.mjs       Page layouts
 public/assets/          CSS, menu JS, local font, logo assets, and social images
+brand/                  Logo and social-card sources; not deployed
 public/CNAME            Intended custom domain
 scripts/build.mjs       HTML, JSON-LD, sitemap, robots, and 404 generation
 scripts/check.mjs       Generated-site checks
@@ -81,13 +82,15 @@ Edit the language dictionaries for copy changes. Add new page templates to `view
 
 Use **Rohlfing Labs**, with both words capitalized and a space, in written copy. The header and footer use the supplied gold artwork. The light theme pairs warm ivory with turquoise headings and service icons, charcoal text, and brass-gold buttons and details. Small gold text uses a darker shade for readability. Brand exports are:
 
-- `public/assets/rohlfing-labs-logo-gold.png` — original supplied gold logotype. The site uses a cropped WebP export, `rohlfing-labs-wordmark.webp`. The shared brand component lightens charcoal lettering in dark mode while preserving the gold.
+- `brand/rohlfing-labs-logo-gold.png` — original supplied gold logotype. The site uses a cropped WebP export, `public/assets/rohlfing-labs-wordmark.webp`. The shared brand component lightens charcoal lettering in dark mode while preserving the gold.
 - `public/assets/rohlfing-labs-logo.png` — retained turquoise logotype for earlier brand exports.
-- `public/assets/rohlfing-labs-mark.png` — supplied symbol, trimmed and resized from `media/logo_turquoise.png`.
-- Matching `.svg` exports wrap these raster images; they are not newly traced vector artwork.
+- `brand/rohlfing-labs-mark.png` — supplied symbol, trimmed and resized from the owner's original turquoise logo.
+- `brand/rohlfing-labs-logo.svg` and `brand/rohlfing-labs-mark.svg` wrap these raster images; they are not newly traced vector artwork.
 - `public/assets/favicon.svg` and `favicon.png` — matching browser icon.
-- `public/assets/social-card.svg` — editable social artwork.
+- `brand/social-card.svg` — editable social artwork.
 - `public/assets/social-card.png` — 1200 × 630 raster export for social platforms.
+
+Files in `brand/` are sources. They are not deployed; only `public/` is.
 
 Re-export the social PNG after editing its SVG. The service icons are original graphics. The homepage shows one featured project at a time in a slideshow of the four published projects. It rotates every 6.5 seconds, with pause, previous/next, and direct project controls. Motion stops for keyboard focus, hover, an offscreen carousel, or a background tab; reduced-motion preferences disable autoplay on load. Without JavaScript the first project stays visible and linked. References and implementation notes are in [docs/hero-slideshow.md](docs/hero-slideshow.md). Portfolio images are actual screenshots of public project pages, captured with the owner's permission. Their sources and capture details are recorded in `public/assets/projects/README.md`. No private dashboards or generated headshots are used.
 
