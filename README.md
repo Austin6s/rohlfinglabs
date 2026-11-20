@@ -1,6 +1,6 @@
 # Rohlfing Labs
 
-The production site uses the concise bilingual design with gold branding, turquoise accents, and warm ivory surfaces. Work in this checkout on `main`; the former `rohlfinglabs-concise` review checkout has been consolidated here. See [REVIEW.md](REVIEW.md) for the design notes.
+The production site uses the concise bilingual design with gold branding, turquoise accents, and warm ivory surfaces. Work in this checkout on `main`.
 
 A bilingual, founder-led software, data, and AI engineering website. English is served at `/`; Traditional Chinese at `/zh-tw/`. Each language has Home, Expertise, Work, About, and Contact pages.
 
@@ -68,7 +68,6 @@ src/lib/components.mjs  Navigation, footer, icons, and shared components
 src/lib/views.mjs       Page layouts
 public/assets/          CSS, menu JS, local font, logo assets, and social images
 public/CNAME            Intended custom domain
-public/_headers         Optional security headers if hosted on Cloudflare Pages
 scripts/build.mjs       HTML, JSON-LD, sitemap, robots, and 404 generation
 scripts/check.mjs       Generated-site checks
 scripts/preview.mjs     Local server and rebuild watcher
@@ -105,14 +104,6 @@ The dark theme uses charcoal surfaces, light text, turquoise accents, and gold b
 - **Business details:** No phone number, registered company status, client counts, certifications, prices, or results have been invented. Add verified details when appropriate.
 
 Cake on Stick is included as a published bilingual small-business website, with an actual screenshot of its English homepage and copy checked against the public site and source repository. Four published projects are featured on the homepage; the Work page also includes the separately labeled Taipei prototype.
-
-## Optional hosting portability
-
-The same `dist/` works on Cloudflare Pages: framework preset **None**, Node 22, build command `npm run build && npm run check`, output `dist`, production branch `main`. Set `SITE_URL` and `CONTACT_EMAIL` for that environment. `public/_headers` contains Cloudflare-compatible security headers; GitHub Pages does not apply that file.
-
-Do not enable another public production host while GitHub Pages is serving the domain. If migrating, configure the replacement, move the custom domain, disable the old deployment, and verify canonicals and redirects.
-
-Reference: [Cloudflare Pages static HTML deployment](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
 
 ## Validation
 
