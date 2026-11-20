@@ -1,7 +1,6 @@
 export default {
   "lang": "zh-Hant",
   "locale": "zh_TW",
-  "language": "繁體中文",
   "nav": {
     "home": "首頁",
     "services": "服務",
@@ -64,11 +63,6 @@ export default {
       "id": "software",
       "name": "軟體與網站開發",
       "text": "打造網站與應用程式，讓客戶更容易找到您，讓團隊工作更順暢。",
-      "tags": [
-        "網站與 CMS",
-        "企業應用程式",
-        "流程自動化"
-      ],
       "question": "讓客戶與團隊，都有更好的體驗。",
       "detail": "從雙語企業網站到內部工具，依照實際的工作方式開發。",
       "items": [
@@ -90,11 +84,6 @@ export default {
       "id": "data",
       "name": "資料工程與架構",
       "text": "串接系統、整理資料，為報表與營運建立可靠的基礎。",
-      "tags": [
-        "資料平台",
-        "資料整合與管線",
-        "雲端架構"
-      ],
       "question": "讓資料成為可以依靠的基礎。",
       "detail": "整合分散資訊，建立團隊能理解、運作與信賴的平台。",
       "items": [
@@ -116,11 +105,6 @@ export default {
       "id": "ai",
       "name": "AI 應用與智慧系統",
       "text": "文件搜尋、輔助翻譯與流程自動化，讓 AI 解決具體問題。",
-      "tags": [
-        "智慧搜尋",
-        "AI 系統整合",
-        "內容處理與翻譯"
-      ],
       "question": "讓 AI 有明確的任務。",
       "detail": "先驗證具體情境與品質，在重要環節保留人工審閱。",
       "items": [
@@ -156,8 +140,7 @@ export default {
     "role": "創辦人・軟體與資料工程",
     "photo": "創辦人肖像預留位置",
     "photoNote": "個人照片即將補上",
-    "monogram": "AR",
-    "caption": "立足台灣，擁有國際視野。"
+    "monogram": "AR"
   },
   "about": {
     "label": "關於 ROHLFING LABS",
@@ -209,11 +192,7 @@ export default {
       "預計時程與大致預算",
       "現有工具或已知限制"
     ],
-    "afterTitle": "下一步，簡單而清楚。",
-    "after": "我們可以先了解目標，討論是否適合合作，再一起確認合理的第一階段範圍。",
-    "locationTitle": "立足台灣。",
-    "locationText": "與台灣及海外企業合作。",
-    "languages": "網站提供英文與繁體中文版本。"
+    "locationText": "與台灣及海外企業合作。"
   },
   "cta": {
     "title": "有專案想聊聊？",
@@ -221,11 +200,9 @@ export default {
   },
   "footer": {
     "tagline": "複雜的問題，用深思熟慮的技術解決。",
-    "positioning": "軟體、資料與 AI 工程",
     "location": "立足台灣・放眼國際",
     "copyright": "Rohlfing Labs",
-    "back": "回到頂端",
-    "note": "直接合作，務實打造。"
+    "back": "回到頂端"
   },
   "notFound": {
     "title": "這條路，暫時走不通。",

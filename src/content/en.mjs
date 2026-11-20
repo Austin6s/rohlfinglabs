@@ -1,7 +1,6 @@
 export default {
   "lang": "en",
   "locale": "en_US",
-  "language": "English",
   "nav": {
     "home": "Home",
     "services": "Services",
@@ -64,11 +63,6 @@ export default {
       "id": "software",
       "name": "Software & Web",
       "text": "Websites and applications that make your business easier to run.",
-      "tags": [
-        "Websites & CMS",
-        "Business applications",
-        "Workflow automation"
-      ],
       "question": "A better experience for customers and teams.",
       "detail": "From a bilingual business website to a custom internal tool, built to fit your workflow.",
       "items": [
@@ -90,11 +84,6 @@ export default {
       "id": "data",
       "name": "Data & Architecture",
       "text": "Connected systems and reliable data for reporting and operations.",
-      "tags": [
-        "Data platforms",
-        "Integration & pipelines",
-        "Cloud architecture"
-      ],
       "question": "Data your business can rely on.",
       "detail": "Bring scattered information together in a platform your team can operate and trust.",
       "items": [
@@ -116,11 +105,6 @@ export default {
       "id": "ai",
       "name": "Applied AI",
       "text": "Document search, assisted translation, and useful workflow automation.",
-      "tags": [
-        "Intelligent search",
-        "AI integration",
-        "Content & translation"
-      ],
       "question": "AI with a clear job to do.",
       "detail": "Test a focused use case, define quality, and build in human review where it matters.",
       "items": [
@@ -156,8 +140,7 @@ export default {
     "role": "Founder · Software & Data Engineering",
     "photo": "Founder portrait",
     "photoNote": "Photograph coming soon",
-    "monogram": "AR",
-    "caption": "Taiwan-based. International perspective."
+    "monogram": "AR"
   },
   "about": {
     "label": "ABOUT ROHLFING LABS",
@@ -209,11 +192,7 @@ export default {
       "Your timing and rough budget",
       "Any existing tools or constraints"
     ],
-    "afterTitle": "A straightforward next step.",
-    "after": "We can start by understanding your goals, discussing whether there’s a good fit, and deciding what a sensible first scope would look like.",
-    "locationTitle": "Based in Taiwan.",
-    "locationText": "Working with businesses in Taiwan and internationally.",
-    "languages": "Website available in English & Traditional Chinese."
+    "locationText": "Working with businesses in Taiwan and internationally."
   },
   "cta": {
     "title": "Have a project in mind?",
@@ -221,11 +200,9 @@ export default {
   },
   "footer": {
     "tagline": "Complex problems. Thoughtful technology.",
-    "positioning": "Software, Data & AI Engineering",
     "location": "Based in Taiwan · International outlook",
     "copyright": "Rohlfing Labs",
-    "back": "Back to top",
-    "note": "Direct collaboration. Thoughtful engineering."
+    "back": "Back to top"
   },
   "notFound": {
     "title": "A little off the map.",
