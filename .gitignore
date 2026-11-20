@@ -4,4 +4,5 @@ node_modules/
 .env
 .env.*
 !.env.example
-artifacts/
+# The owner's original photos, logos and papers. Personal: never commit.
+media/
