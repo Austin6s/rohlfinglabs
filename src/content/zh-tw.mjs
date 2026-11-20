@@ -200,10 +200,5 @@ export default {
     "location": "立足台灣・放眼國際",
     "copyright": "Rohlfing Labs",
     "back": "回到頂端"
-  },
-  "notFound": {
-    "title": "這條路，暫時走不通。",
-    "text": "找不到您要的頁面，讓我們帶您回到首頁。",
-    "link": "回到首頁"
   }
 };
