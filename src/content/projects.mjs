@@ -1,5 +1,5 @@
 // Shared facts and concise bilingual project notes.
-export const projects = [
+const projects = [
   {
     "id": "cakeonstick",
     "url": "https://cakeonstick.com/",

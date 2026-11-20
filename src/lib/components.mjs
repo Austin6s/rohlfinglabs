@@ -2,7 +2,7 @@ export const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':
 export const lines = text => esc(text).replaceAll('\n', '<br>');
 export const arrow = (diagonal = false) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="${diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h15m-6-6 6 6-6 6'}"/></svg>`;
 // Use the cropped wordmark and lighten its charcoal lettering in dark mode.
-export const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="0 0 810 135" width="810" height="135" role="img" aria-labelledby="gold-brand-title-${placement}">
+const brand = (url, placement = 'header') => `<svg class="brand-logotype" viewBox="0 0 810 135" width="810" height="135" role="img" aria-labelledby="gold-brand-title-${placement}">
   <title id="gold-brand-title-${placement}">Rohlfing Labs</title>
   <defs><filter id="gold-brand-night-${placement}" color-interpolation-filters="sRGB">
     <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.126 -7.152 -0.722 0 3" result="charcoal"/>
