@@ -2,7 +2,7 @@
 
 ## Research — November 17, 2026
 
-Reviewed the live homepages in Chromium at 1440 × 1000, in addition to reading their public page content. Reference screenshots are local QA artifacts in `/tmp/inspiration-*.png`.
+Reviewed the live homepages in Chromium at 1440 × 1000, in addition to reading their public page content.
 
 - [Metalab](https://www.metalab.com/): oversized typography and a prominent interactive visual with project navigation. Takeaway: treat the work as a primary visual, rather than decorating a generic service diagram.
 - [Instrument](https://www.instrument.com/): a large showreel and clearly identified recent projects. Takeaway: keep imagery prominent and project names legible.
