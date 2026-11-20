@@ -9,6 +9,6 @@ analytics, third-party script or web font: the code references no outside host b
 | DNS | Cloudflare, records DNS-only | Zone rohlfinglabs.com: four A and four AAAA records to GitHub, `www` CNAME `austin6s.github.io`, none proxied | Fine; Cloudflare doesn't serve the site |
 | Data stores, AI, analytics | None | Code search | Fine |
 
-**Deploy guard:** none needed; the site has no data store. The rule is in `CLAUDE.md`.
+**Deploy guard:** none needed; the site has no data store. The rule is in `AGENTS.md`.
 **Decision (optional):** none required. If you ever want the edge ruled out rather than just
 unmeasured, GitHub Pages can't be pinned to a region.
