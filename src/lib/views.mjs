@@ -93,7 +93,7 @@ export function home(c, url, config) {
       <p class="body-large">${esc(c.founder.text)}</p>
       ${link(url('about'), c.founder.link)}
     </div>
-    ${portrait(c, config.headshot ? url.asset(config.headshot) : null)}
+    ${portrait(c, url.asset(config.headshot))}
   </section>${cta(c, url)}`;
 }
 
@@ -156,7 +156,7 @@ export function work(c, url) {
 export function about(c, url, config) {
   return `${pageIntro(c.about)}
   <section class="container about-founder" id="enterprise-experience" tabindex="-1">
-    <div class="about-portrait">${portrait(c, config.headshot ? url.asset(config.headshot) : null)}</div>
+    <div class="about-portrait">${portrait(c, url.asset(config.headshot))}</div>
     <div class="about-bio">
       <h2>${esc(c.about.heading)}</h2>
       ${c.about.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}

@@ -18,7 +18,7 @@ export async function build() {
   const site = new URL(config.url.endsWith('/') ? config.url : `${config.url}/`);
   if (!['http:', 'https:'].includes(site.protocol) || site.search || site.hash || site.username || site.password) throw new Error('SITE_URL must be a public http(s) website URL without query, hash, or credentials.');
   if (config.email && !/^[^\s@<>"'&?]+@[^\s@<>"'&?]+\.[^\s@<>"'&?]+$/.test(config.email)) throw new Error('CONTACT_EMAIL must be a valid email address.');
-  if (config.headshot && (!config.headshot.startsWith('assets/') || config.headshot.includes('..'))) throw new Error('headshot must be an assets/ path inside public/.');
+  if (!config.headshot || !config.headshot.startsWith('assets/') || config.headshot.includes('..')) throw new Error('headshot must be an assets/ path inside public/.');
   await rm(output, { recursive: true, force: true });
   await mkdir(output, { recursive: true });
   await cp(path.join(root, 'public'), output, { recursive: true });

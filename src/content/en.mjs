@@ -137,10 +137,7 @@ export default {
     "title": "Engineering depth.\nPersonal attention.",
     "text": "Work directly with Austin Rohlfing, an American engineer in Taiwan with Fortune 100 experience. Clear scope, regular progress, and a practical handover.",
     "link": "Meet Austin",
-    "role": "Founder · Software & Data Engineering",
-    "photo": "Founder portrait",
-    "photoNote": "Photograph coming soon",
-    "monogram": "AR"
+    "role": "Founder · Software & Data Engineering"
   },
   "about": {
     "label": "ABOUT ROHLFING LABS",

@@ -39,7 +39,7 @@ export function cta(c, url) {
   return `<section class="cta-section"><div class="container cta-inner"><h2>${lines(c.cta.title)}</h2>${link(url('contact'), c.cta.link, 'button button-light')}</div></section>`;
 }
 export function portrait(c, asset) {
-  return `<figure class="portrait">${asset ? `<img src="${esc(asset)}" alt="Austin Rohlfing" width="707" height="942" loading="lazy" decoding="async">` : `<div class="portrait-placeholder" role="img" aria-label="${esc(c.founder.photo)}"><div class="portrait-lines" aria-hidden="true"></div><span class="portrait-mono" aria-hidden="true">${esc(c.founder.monogram)}<span>↗</span></span><span class="portrait-note">${esc(c.founder.photoNote)}</span></div>`}<figcaption><strong>Austin Rohlfing</strong><span>${esc(c.founder.role)}</span></figcaption></figure>`;
+  return `<figure class="portrait"><img src="${esc(asset)}" alt="Austin Rohlfing" width="707" height="942" loading="lazy" decoding="async"><figcaption><strong>Austin Rohlfing</strong><span>${esc(c.founder.role)}</span></figcaption></figure>`;
 }
 export function miniIcon(kind) {
   return `<svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">${kind === 'software' ? '<rect x="5" y="8" width="38" height="31" rx="2"/><path d="M5 16h38M10 12h2m3 0h2m3 0h2m-3 9-6 6 6 6m10-12 6 6-6 6m-5-13-3 14"/>' : kind === 'data' ? '<ellipse cx="24" cy="11" rx="16" ry="6"/><path d="M8 11v25c0 8 32 8 32 0V11M8 23c0 8 32 8 32 0"/>' : '<path d="m24 4 5 15 15 5-15 5-5 15-5-15-15-5 15-5zM37 5v8m-4-4h8"/>'}</svg>`;

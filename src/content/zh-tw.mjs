@@ -137,10 +137,7 @@ export default {
     "title": "扎實的工程背景，\n直接而真誠的合作。",
     "text": "直接與創辦人 Austin Rohlfing 合作。一位具有美國百大企業經驗、旅居台灣的工程師，重視清楚的範圍、進度與交接。",
     "link": "認識 Austin",
-    "role": "創辦人・軟體與資料工程",
-    "photo": "創辦人肖像預留位置",
-    "photoNote": "個人照片即將補上",
-    "monogram": "AR"
+    "role": "創辦人・軟體與資料工程"
   },
   "about": {
     "label": "關於 ROHLFING LABS",
