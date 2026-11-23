@@ -37,7 +37,7 @@ export default {
   "hero": {
     "first": "First principles.",
     "emphasis": "Durable systems.",
-    "text": "Websites, custom software, data platforms, and applied AI. Designed as real systems, on foundations meant to last.",
+    "text": "Websites, software, data platforms, and AI. I design the core myself, use AI to build faster, and hand you a system you can understand.",
     "cta": "Discuss a project",
     "secondary": "See the work",
     "location": "Taiwan-based. International outlook.",
@@ -55,25 +55,25 @@ export default {
     "credibility": "Founded by a former Fortune 100 engineer."
   },
   "mission": {
-    "label": "Our mission",
-    "title": "Engineer it properly, once.",
-    "text": "Rohlfing Labs builds software, data, and AI systems the way professional engineers should: from first principles, on foundations that last, and proven before they are trusted. No hype, no shortcuts.",
+    "label": "How I work",
+    "title": "Understand it first. Then build it.",
+    "text": "I design and understand every core part of a system myself, starting from what your business needs. Only then do I use AI to build it faster. Nothing I deliver is a black box.",
     "principles": [
       [
-        "Start from first principles",
-        "We begin with what the system must do, not how it is usually done. A strong foundation beats fixes piled on a weak one."
+        "Design before building",
+        "I work out what the system must do, and why, before any code is written. Parts stay small and separate, so they can be upgraded later."
       ],
       [
-        "Foundations built to last",
-        "Small parts with clear boundaries, so any piece can be upgraded or replaced without a rewrite. Fix the cause, never just the symptom."
+        "AI executes, I decide",
+        "AI speeds up the building. The design, the decisions and the checking stay with me."
       ],
       [
-        "Verified, not assumed",
-        "Money, rules, and permissions are handled by tested code. AI can draft and assist, but a person approves and the code is proven."
+        "Tested, not assumed",
+        "Money, rules and permissions run on tested code, never on an AI’s guess."
       ],
       [
-        "Clear to the end",
-        "You see how it works and why it was designed that way. Documented, owned by you, and free of leftovers."
+        "No black boxes",
+        "You can see how it works and why it was designed that way. Documented, and fully yours."
       ]
     ]
   },
@@ -168,9 +168,9 @@ export default {
     "intro": "Engineering rigor from Fortune 100 work, applied by the person who does the work.",
     "heading": "Hi, I’m Austin.",
     "paragraphs": [
-      "I’m Austin, an American software and data engineer based in Taiwan. I founded Rohlfing Labs on one conviction: systems should be engineered from first principles, on foundations built to last, not assembled from shortcuts.",
+      "I’m Austin, an American software and data engineer based in Taiwan. I founded Rohlfing Labs on one conviction: systems should be understood and designed from first principles, on foundations built to last.",
       "At Nationwide Mutual Insurance, I was a Senior Software Engineer and Lead ETL Developer. At Veterinary Practice Partners, my work included Databricks platform architecture, governance, and event-driven systems.",
-      "That discipline shapes every project: understand the problem, choose the simplest sound design, prove it works, and document it. I use modern tools, AI included, to move faster, but judgment and verification stay with a person. You work directly with me, from the first conversation through delivery."
+      "That discipline shapes every project: understand the problem, choose the simplest sound design, test it, and document it. I design and understand each core function myself first, and only then use AI to carry out the work. Design, judgment, and testing stay with me, so I can explain every part of what I deliver. You work directly with me, from the first conversation through delivery."
     ],
     "background": "Engineering background",
     "skills": [

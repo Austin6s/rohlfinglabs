@@ -21,10 +21,10 @@ export function header(c, page, url) {
   const current = target => page === target ? ' aria-current="page"' : '';
   return `<header class="site-header"><div class="container header-inner">
     <a class="brand" href="${url('home')}" aria-label="Rohlfing Labs — ${esc(c.nav.home)}"${current('home')}>${brand(url)}</a>
-    <a class="language-switch" lang="${alternate.lang}" hreflang="${alternate.lang}" href="${url(page || 'home', alternate.key)}">${alternate.name}</a>
     <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-open-label="${esc(c.menu)}" data-close-label="${esc(c.menuClose)}" hidden><span class="visually-hidden">${esc(c.menu)}</span><i aria-hidden="true"></i></button>
     <nav id="primary-navigation" class="primary-navigation" aria-label="${c.lang === 'en' ? 'Main navigation' : '主要導覽'}">
       ${['services','work','about'].map(p => `<a href="${url(p)}"${current(p)}>${esc(c.nav[p])}</a>`).join('')}
+      <a class="language-switch" lang="${alternate.lang}" hreflang="${alternate.lang}" href="${url(page || 'home', alternate.key)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9Z"/></svg><span>${alternate.name}</span></a>
       <button class="theme-toggle" type="button" aria-pressed="false" data-light-label="${c.lang === 'en' ? 'Switch to light mode' : '切換淺色模式'}" data-dark-label="${c.lang === 'en' ? 'Switch to dark mode' : '切換深色模式'}" hidden><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.7 8.7 0 0 1 11 3.5 8.8 8.8 0 1 0 20.5 13Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span>${c.lang === 'en' ? 'Dark mode' : '深色模式'}</span></button>
       <a class="nav-cta" href="${url('contact')}"${current('contact')}>${esc(c.nav.contact)}${arrow()}</a>
     </nav></div></header>`;
