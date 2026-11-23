@@ -13,12 +13,12 @@ export default {
   "menuClose": "Close menu",
   "meta": {
     "home": [
-      "Software, Data & AI Engineering",
-      "Founder-led software, data, and AI engineering based in Taiwan. Thoughtfully built websites, business applications, data platforms, and intelligent systems."
+      "First-Principles Software, Data & AI Engineering",
+      "Founder-led software, data, and AI engineering in Taiwan. Systems designed from first principles on durable foundations: websites, business applications, data platforms, and applied AI."
     ],
     "services": [
       "Software, Data & Applied AI Services",
-      "Explore custom software, bilingual websites, data engineering, cloud architecture, and practical AI integration with Rohlfing Labs."
+      "Custom software, bilingual websites, data engineering, cloud architecture, and applied AI, engineered to be understood, maintained, and trusted."
     ],
     "work": [
       "Software, Websites & Publishing Projects",
@@ -33,11 +33,11 @@ export default {
       "Discuss a website, software application, data challenge, or AI integration with Rohlfing Labs. Based in Taiwan, with an international outlook."
     ]
   },
-  "eyebrow": "Founder-led software, data & AI engineering",
+  "eyebrow": "Software, data & AI systems engineering",
   "hero": {
-    "first": "Complex problems.",
-    "emphasis": "Thoughtful technology.",
-    "text": "Websites, custom software, data platforms, and practical AI for your business.",
+    "first": "First principles.",
+    "emphasis": "Durable systems.",
+    "text": "Websites, custom software, data platforms, and applied AI. Designed as real systems, on foundations meant to last.",
     "cta": "Discuss a project",
     "secondary": "See the work",
     "location": "Taiwan-based. International outlook.",
@@ -53,6 +53,29 @@ export default {
       "choose": "Choose a project"
     },
     "credibility": "Founded by a former Fortune 100 engineer."
+  },
+  "mission": {
+    "label": "Our mission",
+    "title": "Engineer it properly, once.",
+    "text": "Rohlfing Labs builds software, data, and AI systems the way professional engineers should: from first principles, on foundations that last, and proven before they are trusted. No hype, no shortcuts.",
+    "principles": [
+      [
+        "Start from first principles",
+        "We begin with what the system must do, not how it is usually done. A strong foundation beats fixes piled on a weak one."
+      ],
+      [
+        "Foundations built to last",
+        "Small parts with clear boundaries, so any piece can be upgraded or replaced without a rewrite. Fix the cause, never just the symptom."
+      ],
+      [
+        "Verified, not assumed",
+        "Money, rules, and permissions are handled by tested code. AI can draft and assist, but a person approves and the code is proven."
+      ],
+      [
+        "Clear to the end",
+        "You see how it works and why it was designed that way. Documented, owned by you, and free of leftovers."
+      ]
+    ]
   },
   "intro": {
     "title": "What we build",
@@ -106,7 +129,7 @@ export default {
       "name": "Applied AI",
       "text": "Document search, assisted translation, and useful workflow automation.",
       "question": "AI with a clear job to do.",
-      "detail": "Test a focused use case, define quality, and build in human review where it matters.",
+      "detail": "Prove a focused use case, define quality up front, and keep a person in charge where accuracy matters.",
       "items": [
         [
           "Document intelligence",
@@ -125,8 +148,8 @@ export default {
   ],
   "servicesPage": {
     "label": "SERVICES",
-    "title": "Useful technology.\nBuilt for your business.",
-    "intro": "Software, data, and AI. Start with the problem you want to solve."
+    "title": "Sound engineering.\nSystems that last.",
+    "intro": "Software, data, and AI, designed as systems. Start with the problem you want to solve."
   },
   "selectedWork": {
     "title": "Selected projects",
@@ -141,13 +164,13 @@ export default {
   },
   "about": {
     "label": "ABOUT ROHLFING LABS",
-    "title": "Fortune 100 experience.\nDirect collaboration.",
-    "intro": "Enterprise engineering experience. A direct relationship with the person doing the work.",
+    "title": "Enterprise discipline.\nDirect collaboration.",
+    "intro": "Engineering rigor from Fortune 100 work, applied by the person who does the work.",
     "heading": "Hi, I’m Austin.",
     "paragraphs": [
-      "I’m Austin, an American software and data engineer based in Taiwan. I founded Rohlfing Labs to build useful, maintainable systems for businesses.",
+      "I’m Austin, an American software and data engineer based in Taiwan. I founded Rohlfing Labs on one conviction: systems should be engineered from first principles, on foundations built to last, not assembled from shortcuts.",
       "At Nationwide Mutual Insurance, I was a Senior Software Engineer and Lead ETL Developer. At Veterinary Practice Partners, my work included Databricks platform architecture, governance, and event-driven systems.",
-      "Today, that experience informs every website, application, and data project I build. You work directly with me, from the first conversation through delivery."
+      "That discipline shapes every project: understand the problem, choose the simplest sound design, prove it works, and document it. I use modern tools, AI included, to move faster, but judgment and verification stay with a person. You work directly with me, from the first conversation through delivery."
     ],
     "background": "Engineering background",
     "skills": [
@@ -196,7 +219,7 @@ export default {
     "link": "Discuss a project"
   },
   "footer": {
-    "tagline": "Complex problems. Thoughtful technology.",
+    "tagline": "First principles. Durable systems.",
     "location": "Based in Taiwan · International outlook",
     "copyright": "Rohlfing Labs",
     "back": "Back to top"

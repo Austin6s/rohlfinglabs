@@ -43,7 +43,7 @@ export async function build() {
     const json = {
       '@context': 'https://schema.org', '@graph': [
         { '@type': 'Organization', '@id': `${site.href}#organization`, name: config.name, url: site.href,
-          description: c.meta.home[1], slogan: 'Complex problems. Thoughtful technology.',
+          description: c.meta.home[1], slogan: 'First principles. Durable systems.',
           logo: new URL('assets/rohlfing-labs-logo.png', site).href,
           ...(config.email ? {email: config.email} : {}),
           founder: {'@id': `${site.href}#austin`}, location: {'@type':'Place', name:'Taiwan'} },
@@ -62,7 +62,7 @@ export async function build() {
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 ${is404 ? '<meta name="robots" content="noindex, follow">' : `<link rel="canonical" href="${esc(canonical)}">${Object.entries(locales).map(([key,value])=>`<link rel="alternate" hreflang="${value.lang}" href="${esc(absolute(page,key))}">`).join('')}<link rel="alternate" hreflang="x-default" href="${esc(absolute(page,'en'))}">`}
 <meta property="og:type" content="website"><meta property="og:site_name" content="Rohlfing Labs"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:locale" content="${c.locale}"><meta property="og:locale:alternate" content="${locale === 'en' ? zh.locale : en.locale}">
-<meta property="og:image" content="${esc(new URL('assets/social-card.png',site).href)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Rohlfing Labs — Complex problems. Thoughtful technology.">
+<meta property="og:image" content="${esc(new URL('assets/social-card.png',site).href)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Rohlfing Labs — First principles. Durable systems.">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(fullTitle)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${esc(new URL('assets/social-card.png',site).href)}">
 <link rel="icon" href="${url.asset('assets/favicon.svg')}" type="image/svg+xml">
 <link rel="preload" href="${url.asset('assets/manrope-latin.woff2')}" as="font" type="font/woff2" crossorigin>

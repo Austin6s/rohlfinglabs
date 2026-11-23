@@ -59,6 +59,18 @@ export function home(c, url, config) {
     </div>
     ${workShowcase(c, url, projects)}
   </section>
+  <section class="mission-section" id="mission">
+    <div class="container mission-grid">
+      <div class="mission-lead">
+        ${label(c.mission.label)}
+        <h2>${esc(c.mission.title)}</h2>
+        <p class="body-large">${esc(c.mission.text)}</p>
+      </div>
+      <ol class="principles">
+        ${c.mission.principles.map(([heading, text]) => `<li><h3>${esc(heading)}</h3><p>${esc(text)}</p></li>`).join('')}
+      </ol>
+    </div>
+  </section>
   <section class="section container concise-services" id="expertise">
     ${sectionHeading(c.intro, url('services'))}
     <div class="service-grid">
