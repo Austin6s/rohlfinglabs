@@ -1,12 +1,12 @@
 # Rohlfing Labs (rohlfinglabs.com): project rules
 
-A static bilingual site built to `dist/` and published by GitHub Pages (`.github/workflows/deploy.yml`). DNS is on Cloudflare, DNS-only.
+A static bilingual site (English at `/`, Traditional Chinese at `/zh-tw/`) built to `dist/` and published by GitHub Pages (`.github/workflows/deploy.yml`). DNS is on Cloudflare, DNS-only. `README.md` has the configuration and how to run it.
 
-## No Chinese servers (the owner's rule, 7 November 2026)
+- There is no dev branch: a push to `main` builds and publishes the live site, so it needs the owner's yes.
+- Before a push, run `npm run build && npm run check`.
 
-No data of the owner's or visitors' may be stored on, processed by, or risk passing through a
-server in mainland China, Hong Kong or Macau. AI models from Chinese companies (Qwen, DeepSeek,
-Kimi, GLM and the like) are out for anything touching user data; open-weight models are fine only
-on non-Chinese servers. Before adding a host, CDN, script, font, form service, AI provider or data
-store, find out where it runs and say so. Never create a Cloudflare R2 or D1 store in `apac`.
-The audit and its evidence are in `docs/no-chinese-servers.md`.
+## No Chinese technology
+
+The owner's highest-priority rule; his shared rules hold the full text. Nothing of this project may be stored on, processed by or sent through a server in mainland China, Hong Kong or Macau, and no AI model, service, library or tool made, controlled or started by a company based there may be used, wherever it is hosted. Before adding a host, region, CDN, font, dependency, AI provider or data store, find out who makes it and where it runs, and say so.
+
+The site has no data store, so there is no deploy guard. The audit is in `docs/no-chinese-servers.md`.
